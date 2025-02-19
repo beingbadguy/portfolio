@@ -24,15 +24,14 @@ const HomePage = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
         viewport={{ once: true }} // Ensures animation runs only once
-        className=" selection:bg-yellow-500 selection:text-white"
+        className=" selection:bg-yellow-500 selection:text-white text-md"
       >
         Hey, I'm Aman a{" "}
-        <span className="bg-green-500 text-white">full stack developer</span>{" "}
-        passionate about building impactful solutions that enhance convenience
-        and add value through tech and code. When I'm not working on projects,
-        you can find me tinkering on X (twitter), exploring the latest trends in
-        financial tech (Fintech) and startups. I'm dedicated to build products
-        that make a difference.
+        <span className="bg-green-500 text-white ">full stack developer</span>{" "}
+        passionate about building real-world projects. I love creating seamless
+        user experiences, whether it’s an e-commerce platform, social media app,
+        or a high-performance web app. When I’m not coding, I’m either playing
+        football, exploring new tech, or refining my skills.
       </motion.h1>
       <div className="my-2 flex items-center lg:gap-10 mt-5 flex-wrap">
         <div className="flex items-center">
@@ -40,7 +39,10 @@ const HomePage = () => {
           <p>By the way, I'm open to projects and work.</p>
         </div>
         <div className="flex items-center gap-2 mt-2">
-          <IoIosArrowRoundForward size={30} className="animate-pulse" />
+          <IoIosArrowRoundForward
+            size={30}
+            className="animate-pulse text-green-400"
+          />
           <a href="mailto:authorisedaman@gmail.com">
             {" "}
             <SiMaildotru className=" cursor-pointer hover:text-blue-500 transition-all duration-200" />{" "}
@@ -53,7 +55,13 @@ const HomePage = () => {
       </div>
       <div className="select-none">
         <h1 className="font-semibold mt-10">Skills and Technologies </h1>
-        <div className="flex gap-2 my-5 flex-wrap">
+        <motion.div
+          initial={{ filter: "blur(3px)", y: -20 }}
+          whileInView={{ filter: "blur(0px)", y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="flex gap-2 my-5 flex-wrap"
+        >
           <Skills skill={"JavaScript"} />
           <Skills skill={"TypeScript"} />
           <Skills skill={"React"} />
@@ -71,7 +79,7 @@ const HomePage = () => {
           <Skills skill={"Git/Github"} />
           <Skills skill={"C++"} />
           <Skills skill={"C"} />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

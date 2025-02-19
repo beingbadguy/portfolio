@@ -13,6 +13,12 @@ const LayoutPage = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [currentLanguage, setCurrentLanguage] = useState<number>(0);
 
+  const clickSound = () => {
+    const audio = new Audio("clickk.mp3");
+    audio.volume = 0.2;
+    audio.play();
+  };
+
   const greetings = [
     "Hello", // English
     "Hola", // Spanish
@@ -90,7 +96,7 @@ const LayoutPage = () => {
               <p>{date} IST</p>
             </div>
           </nav>
-          <hr className="w-full border border-gray-200" />
+          <hr className="w-full border border-green-300" />
           <div className="w-full">
             <Outlet />
           </div>
@@ -101,6 +107,7 @@ const LayoutPage = () => {
                 size={27}
                 className="hover:-translate-y-1 hover:text-blue-500 transition-all ease-in-out cursor-pointer duration-300"
                 onClick={() => {
+                  clickSound();
                   navigate("/");
                 }}
               />
@@ -115,6 +122,8 @@ const LayoutPage = () => {
                 size={24}
                 className="hover:-translate-y-1 hover:text-blue-500 transition-all ease-in-out cursor-pointer duration-300"
                 onClick={() => {
+                  clickSound();
+
                   navigate("/projects");
                 }}
               />{" "}
@@ -130,6 +139,8 @@ const LayoutPage = () => {
                 size={30}
                 className="hover:-translate-y-1 hover:text-blue-500 transition-all ease-in-out cursor-pointer duration-300"
                 onClick={() => {
+                  clickSound();
+
                   navigate("/education");
                 }}
               />{" "}
@@ -173,6 +184,8 @@ const LayoutPage = () => {
                 size={25}
                 className="hover:-translate-y-1 hover:text-blue-500 transition-all ease-in-out cursor-pointer duration-300"
                 onClick={() => {
+                  clickSound();
+
                   navigate("/socials");
                 }}
               />{" "}
