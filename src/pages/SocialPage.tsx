@@ -4,8 +4,18 @@ import { HiOutlineDocumentText } from "react-icons/hi";
 import { LuGithub } from "react-icons/lu";
 import { MdOutlineMail } from "react-icons/md";
 import { motion } from "motion/react";
+import { AiOutlineSpotify } from "react-icons/ai";
+import { IoIosPlay } from "react-icons/io";
+import { useEffect } from "react";
+import { IoPauseOutline } from "react-icons/io5";
+import { useAudioStore } from "../store";
 
 const SocialPage = () => {
+  const { setAudio, playAudio, pauseAudio, isPlaying } = useAudioStore();
+  useEffect(() => {
+    setAudio();
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: -20, filter: "blur(3px)" }}
@@ -58,7 +68,41 @@ const SocialPage = () => {
           Github
         </div>
       </a>
-      <div></div>
+
+      {/* fun starts from here  */}
+      <div className="flex items-start text-left justify-start  w-full flex-col">
+        <h1 className="text-left font-semibold text-md my-2">Now Playing</h1>
+        <div className="flex justify-between items-center w-full">
+          <div className="flex gap-4">
+            <div className="bg-green-500 size-14 flex items-center justify-center rounded">
+              <AiOutlineSpotify className="size-10" />
+            </div>
+            <h2 className="text-left font-semibold text-sm my-2">
+              <span className="text-green-600"> Yeh Dooriyan</span> <br />
+              <span className="text-gray-400 text-[12px]">
+                {" "}
+                Pritam, Mohit Chauhan
+              </span>
+            </h2>
+          </div>
+
+          <button className="text-left font-semibold text-sm my-2">
+            {isPlaying ? (
+              <IoPauseOutline
+                size={25}
+                className="cursor-pointer"
+                onClick={pauseAudio}
+              />
+            ) : (
+              <IoIosPlay
+                size={25}
+                className="cursor-pointer"
+                onClick={playAudio}
+              />
+            )}
+          </button>
+        </div>
+      </div>
     </motion.div>
   );
 };
