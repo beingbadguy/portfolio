@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaCircle, FaRegFolderClosed } from "react-icons/fa6";
 import { ImConnection } from "react-icons/im";
-import { RiBallPenLine, RiHome6Line } from "react-icons/ri";
+import { RiHome6Line } from "react-icons/ri";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { MdOutlineSchool } from "react-icons/md";
 import { motion } from "motion/react";
@@ -60,11 +60,7 @@ const LayoutPage = () => {
     <div>
       {loading ? (
         <div className="flex items-center justify-center h-screen font-bold flex-col">
-          <motion.div
-          
-          >
-            {greetings[currentLanguage]}
-          </motion.div>
+          <motion.div>{greetings[currentLanguage]}</motion.div>
         </div>
       ) : (
         <div className="flex items-center justify-center flex-col text-lg sm:mx-20 md:mx-32 lg:mx-96   ">

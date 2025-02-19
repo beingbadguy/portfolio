@@ -1,7 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import App from "./App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LayoutPage from "./layout/LayoutPage.tsx";
 import HomePage from "./pages/HomePage.tsx";
@@ -24,9 +23,6 @@ const router = createBrowserRouter([
       { path: "/work", element: <WorkPage /> },
       { path: "/blogs", element: <BlogPage /> },
       { path: "/socials", element: <SocialPage /> },
-      // { path: "*", element: <ErrorPage /> },
-      // { path: "/contact", element: <Contact /> },
-      // // Add more routes here...
     ],
   },
   { path: "*", element: <ErrorPage /> },
