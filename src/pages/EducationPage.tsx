@@ -5,6 +5,7 @@ const EducationPage = () => {
   const text = `Those who are committed to nothing, are distracted by everything.`;
 
   const letters = text.split(" ");
+
   return (
     <motion.div
       className="m-4 flex flex-col items-center justify-between"
@@ -35,7 +36,7 @@ const EducationPage = () => {
         <span className="text-7xl tracking-[-30px] transform rotate-180 inline-block">
           ,,
         </span>
-        <div className="absolute top-5 left-9 font-semibold flex gap-2">
+        <div className="-mt-16 ml-7 font-semibold flex gap-2 flex-wrap">
           {letters.map((letter, index) => (
             <motion.h1
               key={index}
@@ -48,14 +49,14 @@ const EducationPage = () => {
                   delay: index * 0.1, // Staggered ripple effect
                 },
               }}
-                viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
             >
               {letter}
             </motion.h1>
           ))}
         </div>
 
-        <p className="ml-5 -mt-8 texty bg-green-100 w-[120px] text-green-700">
+        <p className="ml-5 mt-3 texty bg-green-100 w-[120px] text-green-700">
           {" "}
           - Bhagwat Geeta
         </p>
