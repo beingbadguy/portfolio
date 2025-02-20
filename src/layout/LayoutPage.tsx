@@ -38,7 +38,7 @@ const LayoutPage = () => {
   // console.log(currentLanguage);
 
   useEffect(() => {
-    setLoading(true);
+    // setLoading(true);
     const interval = setTimeout(() => {
       setLoading(false);
     }, 4000);
