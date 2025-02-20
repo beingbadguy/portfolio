@@ -60,9 +60,10 @@ const HomePage = () => {
           whileInView={{ filter: "blur(0px)", y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="flex gap-2 my-5 flex-wrap"
+          
+          className="flex gap-2 my-5 flex-wrap "
         >
-          <Skills skill={"JavaScript"} />
+          <Skills skill={"JavaScript"}  />
           <Skills skill={"TypeScript"} />
           <Skills skill={"React"} />
           <Skills skill={"Node.js"} />

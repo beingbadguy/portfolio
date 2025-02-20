@@ -5,6 +5,7 @@ import { RiHome6Line } from "react-icons/ri";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { MdOutlineSchool } from "react-icons/md";
 import { motion } from "motion/react";
+import TextScramble from "../components/TextScramble";
 
 const LayoutPage = () => {
   const [date, setDate] = useState<string>("");
@@ -33,12 +34,14 @@ const LayoutPage = () => {
     "안녕하세요", // Korean
     "नमस्ते", // Hindi
   ];
+  // console.log(greetings.length); 12
+  // console.log(currentLanguage);
 
   useEffect(() => {
     setLoading(true);
     const interval = setTimeout(() => {
       setLoading(false);
-    }, 3800);
+    }, 4000);
     return () => clearTimeout(interval);
   }, []);
 
@@ -49,7 +52,7 @@ const LayoutPage = () => {
           return prev + 1;
         } else {
           clearInterval(interval);
-          return 0;
+          return greetings.length - 1;
         }
       });
     }, 320);
@@ -66,26 +69,39 @@ const LayoutPage = () => {
     <div>
       {loading ? (
         <div className="flex items-center justify-center h-screen font-bold flex-col">
-          <motion.div>{greetings[currentLanguage]}</motion.div>
+          <motion.div
+            animate={
+              currentLanguage === 11 ? { scale: [1, 10], opacity: [1, 0] } : {}
+            }
+            transition={{
+              duration: 0.5,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+            className="texty text-xl"
+          >
+            {greetings[currentLanguage]}
+          </motion.div>
         </div>
       ) : (
         <div className="flex items-center justify-center flex-col text-lg sm:mx-20 md:mx-32 lg:mx-96   ">
           <nav className="flex items-center justify-between p-4 w-full mt-2  text-sm md:text-lg">
             <div className="flex items-center gap-1 flex-wrap">
-              <p
-                className="hover:text-blue-500 cursor-pointer transition-all duration-200"
+              {/* <p
+                className="  hover:text-green-500 cursor-pointer transition-all duration-200"
                 onClick={() => {
                   navigate("/");
                 }}
               >
                 Aman Kumar
-              </p>
+              </p> */}
+              <TextScramble text="Aman Kumar" />
               <span
                 className={` ${pathname == "/" ? "hidden" : ""} text-gray-300`}
               >
                 /
               </span>
-              <div className="hover:text-blue-500 cursor-pointer transition-all duration-200">
+              <div className="hover:text-green-600 cursor-pointer transition-all duration-200">
                 {" "}
                 {pathname.replace("/", "").charAt(0).toUpperCase() +
                   pathname.slice(2)}
@@ -105,7 +121,7 @@ const LayoutPage = () => {
             <div className="relative">
               <RiHome6Line
                 size={27}
-                className="hover:-translate-y-1 hover:text-blue-500 transition-all ease-in-out cursor-pointer duration-300"
+                className="hover:-translate-y-1 hover:text-green-500 transition-all ease-in-out cursor-pointer duration-300"
                 onClick={() => {
                   clickSound();
                   navigate("/");
@@ -114,13 +130,13 @@ const LayoutPage = () => {
               <div
                 className={`${
                   pathname == "/" ? "block" : "hidden"
-                } size-1 absolute bg-blue-500 rounded-full -bottom-2 left-[40%]`}
+                } size-1 absolute bg-green-500 rounded-full -bottom-2 left-[40%]`}
               />
             </div>
             <div className="relative">
               <FaRegFolderClosed
                 size={24}
-                className="hover:-translate-y-1 hover:text-blue-500 transition-all ease-in-out cursor-pointer duration-300"
+                className="hover:-translate-y-1 hover:text-green-500 transition-all ease-in-out cursor-pointer duration-300"
                 onClick={() => {
                   clickSound();
 
@@ -130,14 +146,14 @@ const LayoutPage = () => {
               <div
                 className={`${
                   pathname == "/projects" ? "block" : "hidden"
-                } size-1 absolute bg-blue-500 rounded-full -bottom-2 left-[40%]`}
+                } size-1 absolute bg-green-500 rounded-full -bottom-2 left-[40%]`}
               />
             </div>
 
             <div className="relative">
               <MdOutlineSchool
                 size={30}
-                className="hover:-translate-y-1 hover:text-blue-500 transition-all ease-in-out cursor-pointer duration-300"
+                className="hover:-translate-y-1 hover:text-green-500 transition-all ease-in-out cursor-pointer duration-300"
                 onClick={() => {
                   clickSound();
 
@@ -147,7 +163,7 @@ const LayoutPage = () => {
               <div
                 className={`${
                   pathname == "/education" ? "block" : "hidden"
-                } size-1 absolute bg-blue-500 rounded-full -bottom-2 left-[40%]`}
+                } size-1 absolute bg-green-500 rounded-full -bottom-2 left-[40%]`}
               />
             </div>
 
@@ -182,7 +198,7 @@ const LayoutPage = () => {
             <div className="relative">
               <ImConnection
                 size={25}
-                className="hover:-translate-y-1 hover:text-blue-500 transition-all ease-in-out cursor-pointer duration-300"
+                className="hover:-translate-y-1 hover:text-green-500 transition-all ease-in-out cursor-pointer duration-300"
                 onClick={() => {
                   clickSound();
 
@@ -192,7 +208,7 @@ const LayoutPage = () => {
               <div
                 className={`${
                   pathname == "/socials" ? "block" : "hidden"
-                } size-1 absolute bg-blue-500 rounded-full -bottom-2 left-[43%]`}
+                } size-1 absolute bg-green-500 rounded-full -bottom-2 left-[43%]`}
               />
             </div>
           </nav>

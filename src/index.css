@@ -5,8 +5,14 @@
   /* font-family: "Shadows Into Light", cursive; */
 }
 *::selection {
-  background-color: #eab308;
+  background-color: #22c55e;
   color: white;
+}
+#texty {
+  font-family: "Shadows Into Light", cursive;
+}
+.texty {
+  font-family: "Shadows Into Light", cursive;
 }
 
 body {

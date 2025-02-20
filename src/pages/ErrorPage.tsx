@@ -19,11 +19,11 @@ const ErrorPage = () => {
   });
   return (
     <div className="m-4 h-[90vh] flex items-center justify-center flex-col">
-      <h1 className=" text-7xl sm:text-[200px]">
-        4<span className="text-blue-500">0</span>4
+      <h1 className=" text-7xl sm:text-[100px]">
+        4<span className="text-green-500">0</span>4
       </h1>
-      <div className="my-2 sm:text-[30px]">
-        Sorry, There's <span className="text-blue-500">Nothing</span> Here!
+      <div className="my-2 sm:text-[20px]">
+        Sorry, There's <span className="text-green-500">Nothing</span> Here!
       </div>
       <p className="my-2 text-center">
         redirecting to the portfolio in {timer} seconds...
