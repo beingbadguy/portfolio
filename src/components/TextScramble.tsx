@@ -39,7 +39,7 @@ const TextScramble: React.FC<TextScrambleProps> = ({ text }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
       onMouseEnter={scrambleText} // Trigger scrambling on hover
-      className="hover:text-green-500 cursor-pointer transition-all duration-200 "
+      className="hover:text-green-500 cursor-pointer transition-all duration-200 select-none"
       onClick={() => {
         navigate("/");
       }}
