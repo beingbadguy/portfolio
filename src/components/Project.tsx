@@ -29,10 +29,12 @@ const Project = (prop: propType) => {
           {prop.name}
         </a>
       </div>
-      <h1 className="text-[15px] my-2 text-gray-500 selection:bg-yellow-500 selection:text-white">{prop.description}</h1>
+      <h1 className="text-[15px] my-2 text-gray-500 selection:bg-yellow-500 selection:text-white">
+        {prop.description}
+      </h1>
       <div className="flex gap-2 flex-wrap">
         {prop.skills?.map((s, index) => (
-          <Skills key={index} skill={s} />
+          <Skills key={index} skill={s} yes={true} />
         ))}
       </div>
       <div className="flex items-center gap-4 my-4">
