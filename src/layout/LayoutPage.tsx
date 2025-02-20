@@ -84,7 +84,7 @@ const LayoutPage = () => {
           </motion.div>
         </div>
       ) : (
-        <div className="flex items-center justify-center flex-col text-lg sm:mx-20 md:mx-32 lg:mx-96   ">
+        <div className="flex items-center justify-center flex-col text-lg sm:mx-20 md:mx-32 lg:mx-60 xl:mx-92   ">
           <nav className="flex items-center justify-between p-4 w-full mt-2  text-sm md:text-lg">
             <div className="flex items-center gap-1 flex-wrap">
               {/* <p

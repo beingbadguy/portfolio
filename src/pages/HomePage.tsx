@@ -41,15 +41,15 @@ const HomePage = () => {
         <div className="flex items-center gap-2 mt-2">
           <IoIosArrowRoundForward
             size={30}
-            className="animate-pulse text-green-400"
+            className="animate-pulse text-green-600"
           />
           <a href="mailto:authorisedaman@gmail.com">
             {" "}
-            <SiMaildotru className=" cursor-pointer hover:text-blue-500 transition-all duration-200" />{" "}
+            <SiMaildotru className=" cursor-pointer hover:text-green-700 transition-all duration-200" />{" "}
           </a>
           /
           <a href="mailto:authorisedaman@gmail.com">
-            <RiMailLine className=" cursor-pointer hover:text-blue-500 transition-all duration-200" />
+            <RiMailLine className=" cursor-pointer hover:text-green-700 transition-all duration-200" />
           </a>
         </div>
       </div>
