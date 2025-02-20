@@ -17,7 +17,7 @@ const TextScramble: React.FC<TextScrambleProps> = ({ text }) => {
       setScrambledText((prev) =>
         prev
           .split("")
-          .map((c, index) =>
+          .map((_, index) =>
             index < i
               ? text[index]
               : chars[Math.floor(Math.random() * chars.length)]
