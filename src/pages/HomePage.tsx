@@ -60,26 +60,25 @@ const HomePage = () => {
           whileInView={{ filter: "blur(0px)", y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           viewport={{ once: true }}
-          
           className="flex gap-2 my-5 flex-wrap "
         >
-          <Skills skill={"JavaScript"}  />
-          <Skills skill={"TypeScript"} />
-          <Skills skill={"React"} />
-          <Skills skill={"Node.js"} />
-          <Skills skill={"Express.js"} />
-          <Skills skill={"HTML"} />
-          <Skills skill={"CSS"} />
-          <Skills skill={"Tailwind"} />
-          <Skills skill={"Framer Motion"} />
-          <Skills skill={"Zustand"} />
-          <Skills skill={"Socket.io"} />
-          <Skills skill={"Firebase"} />
-          <Skills skill={"React Query"} />
-          <Skills skill={"Python"} />
-          <Skills skill={"Git/Github"} />
-          <Skills skill={"C++"} />
-          <Skills skill={"C"} />
+          <Skills skill={"JavaScript"} yes={false} />
+          <Skills skill={"TypeScript"} yes={false} />
+          <Skills skill={"React"} yes={false} />
+          <Skills skill={"Node.js"} yes={false} />
+          <Skills skill={"Express.js"} yes={false} />
+          <Skills skill={"HTML"} yes={false} />
+          <Skills skill={"CSS"} yes={false} />
+          <Skills skill={"Tailwind"} yes={false} />
+          <Skills skill={"Framer Motion"} yes={false} />
+          <Skills skill={"Zustand"} yes={false} />
+          <Skills skill={"Socket.io"} yes={false} />
+          <Skills skill={"Firebase"} yes={false} />
+          <Skills skill={"React Query"} yes={false} />
+          <Skills skill={"Python"} yes={false} />
+          <Skills skill={"Git/Github"} yes={false} />
+          <Skills skill={"C++"} yes={false} />
+          <Skills skill={"C"} yes={false} />
         </motion.div>
       </div>
     </div>
