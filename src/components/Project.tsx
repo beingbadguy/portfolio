@@ -39,10 +39,10 @@ const Project = (prop: propType) => {
       </div>
       <div className="flex items-center gap-4 my-4">
         <a href={prop.live} target="_blank">
-          <FiExternalLink className=" text-gray-500 cursor-pointer hover:scale-110 transition-all duration-200 size-5 hover:text-blue-500" />
+          <FiExternalLink className=" text-gray-500 cursor-pointer hover:scale-110 transition-all duration-200 size-5 hover:text-green-500" />
         </a>
         <a href={prop.github} target="_blank">
-          <LuGithub className=" text-gray-500 cursor-pointer hover:scale-110 transition-all duration-200 hover:text-blue-500" />
+          <LuGithub className=" text-gray-500 cursor-pointer hover:scale-110 transition-all duration-200 hover:text-green-500" />
         </a>
       </div>
     </motion.div>
