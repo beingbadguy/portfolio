@@ -11,7 +11,7 @@ const LayoutPage = () => {
   const [date, setDate] = useState<string>("");
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
   const [currentLanguage, setCurrentLanguage] = useState<number>(0);
 
   const clickSound = () => {
