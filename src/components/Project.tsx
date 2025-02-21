@@ -29,7 +29,7 @@ const Project = (prop: propType) => {
           {prop.name}
         </a>
       </div>
-      <h1 className="text-[15px] my-2 text-gray-500 selection:bg-yellow-500 selection:text-white">
+      <h1 className="text-[12px] md:text-[14px] my-2 text-gray-500 selection:bg-yellow-500 selection:text-white">
         {prop.description}
       </h1>
       <div className="flex gap-2 flex-wrap">

@@ -32,11 +32,11 @@ const EducationPage = () => {
         stream="Science, Maths, English"
         period="2013 - 2018"
       />
-      <div className="w-full mt-10 relative select-none p-4">
-        <span className="text-7xl tracking-[-30px] transform rotate-180 inline-block">
+      <div className="w-full mt-10 relative select-none p-4 text-sm" >
+        <span className="text-6xl tracking-[-24px] transform rotate-180 inline-block ml-2">
           ,,
         </span>
-        <div className="-mt-16 ml-7 font-semibold flex gap-2 flex-wrap">
+        <div className="-mt-13 ml-7 font-semibold flex gap-2 flex-wrap">
           {letters.map((letter, index) => (
             <motion.h1
               key={index}

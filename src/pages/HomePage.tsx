@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 
 const HomePage = () => {
   return (
-    <div className="m-4 mb-20 ">
+    <div className="m-4 mb-20 text-sm md:text-[16px] ">
       <div className="">
         <motion.img
           initial={{ opacity: 0, y: -20 }}
@@ -24,7 +24,7 @@ const HomePage = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
         viewport={{ once: true }} // Ensures animation runs only once
-        className=" selection:bg-yellow-500 selection:text-white text-md"
+        className=" selection:bg-yellow-500 selection:text-white text-sm md:text-[16px]"
       >
         Hey, I'm Aman a{" "}
         <span className="bg-green-500 text-white ">full stack developer</span>{" "}

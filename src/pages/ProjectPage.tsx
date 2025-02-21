@@ -8,7 +8,7 @@ const ProjectPage = () => {
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="m-4 mb-20 flex flex-col gap-5 "
+      className="m-8 mb-20 flex flex-col gap-5  "
     >
       <Project
         name="JerseyNation"
@@ -23,7 +23,7 @@ const ProjectPage = () => {
           "React Query",
           "Axios",
         ]}
-        description="JerseyNation is an e-commerce platform for jersey enthusiasts, offering a seamless shopping experience with secure authentication, real-time inventory updates, and order tracking. It features an intuitive UI, fast-loading pages, and automated email notifications. With a mobile-friendly design, it provides a professional marketplace for sports apparel."
+        description="JerseyNation, an e-commerce platform for jersey enthusiasts, featuring secure authentication, real-time inventory updates, order tracking, intuitive UI, fast-loading pages, automated email notifications, and a mobile-friendly design. "
         github="https://github.com/beingbadguy/JerseyNation"
       />
       <Project
@@ -40,14 +40,14 @@ const ProjectPage = () => {
           "Axios",
           "Framer-motion",
         ]}
-        description="Bulletin is a blogging platform where users can create, edit, delete, and explore blogs easily. It offers account registration, email verification, password recovery, and a powerful search feature. With a clean design, it ensures a smooth and engaging experience for writers and readers."
+        description="Bulletin, a blogging platform enabling users to manage and explore blogs with features like account registration, email verification, password recovery, and a powerful search function, all within a clean, engaging design. "
         github="https://github.com/beingbadguy/JerseyNation"
       />{" "}
       <Project
         name="JobConnect"
         live="https://job-connect-taupe.vercel.app/"
         skills={["React.js", "TailwindCSS", "Firebase", "ContextAPI"]}
-        description="JobConnect is a job networking platform where users can create accounts, search for jobs, and apply easily. Employers can post job listings, review applications, and connect with candidates. With resume uploads and real-time notifications, it simplifies job searching and hiring.
+        description="JobConnect, a job networking platform facilitating seamless interactions between job seekers and employers. Features include user accounts, job search and application capabilities, resume uploads, real-time notifications, and direct employer-candidate connections.
 "
         github="https://github.com/beingbadguy/JobConnect"
       />
@@ -55,7 +55,7 @@ const ProjectPage = () => {
         name="EstateNation"
         live="https://estate-nation.vercel.app/"
         skills={["React.js", "TailwindCSS", "Firebase", "ContextAPI"]}
-        description="EstateNation is a real estate platform that helps users buy, sell, and explore properties effortlessly. It offers advanced search filters, real-time property listings, and secure user authentication. With a modern UI and responsive design, EstateNation ensures a smooth and efficient property browsing experience."
+        description="EstateNation, a real estate platform enabling effortless property transactions with advanced search filters, real-time listings, secure authentication, and a modern, responsive design. "
         github="https://github.com/beingbadguy/EstateNation"
       />{" "}
     </motion.div>

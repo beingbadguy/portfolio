@@ -12,7 +12,7 @@ const Education = (prop: educationPropType) => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 1 }}
-      className="flex items-start justify-between mt-4 text-sm md:text-md w-full hover:bg-green-200 cursor-pointer p-2 hover:text-green-700 group rounded transition-all duration-200  "
+      className="flex items-start justify-between mt-4 text-[12px] md:text-md w-full hover:bg-green-200 cursor-pointer p-2 hover:text-green-700 group rounded transition-all duration-200  "
     >
       <div className="flex items-center gap-6  ">
         <div className="">

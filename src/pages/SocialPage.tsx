@@ -18,7 +18,7 @@ const SocialPage = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: -20, filter: "blur(3px)" }}
+      initial={{ opacity: 0, y: -20, filter: "blur(5px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       viewport={{ once: true }}
@@ -27,7 +27,7 @@ const SocialPage = () => {
       <a
         href="https://drive.google.com/file/d/1Nzr-SM0lRLO7s3C0peDA5HwfsnZotrEy/view?usp=sharing"
         target="_blank"
-        className="group flex items-center w-full  cursor-pointer justify-between rounded px-2 my-1 flex-row-reverse hover:bg-green-100 transition-all duration-200 py-3"
+        className="group flex items-center w-full  cursor-pointer justify-between rounded px-2 my-1 flex-row-reverse hover:bg-green-100 transition-all duration-200 py-3 text-sm md:text-[16px]"
       >
         <GoArrowRight className="hover:text-green-600 transition-all hover:translate-x-1  duration-200 scale-110 group-hover:animate-bounce group-hover:text-green-600" />
         <div className="flex items-center gap-1 group-hover:text-green-600">
@@ -38,7 +38,7 @@ const SocialPage = () => {
       <a
         href="mailto:authorisedaman@gmail.com"
         target="_blank"
-        className="flex items-center w-full  cursor-pointer justify-between rounded px-2 my-1 flex-row-reverse group hover:bg-green-100 transition-all duration-200 py-3"
+        className="flex items-center w-full  cursor-pointer justify-between rounded px-2 my-1 flex-row-reverse group hover:bg-green-100 transition-all duration-200 py-3 text-sm md:text-[16px]"
       >
         <GoArrowRight className="hover:text-green-600 transition-all hover:translate-x-1  duration-200 scale-110 group-hover:animate-bounce group-hover:text-green-600" />
         <div className="flex items-center gap-1 group-hover:text-green-600">
@@ -49,7 +49,7 @@ const SocialPage = () => {
       <a
         href="https://www.linkedin.com/in/aman-kumar-028a33217/"
         target="_blank"
-        className="flex items-center w-full  cursor-pointer justify-between rounded px-2 my-1 flex-row-reverse group hover:bg-green-100 transition-all duration-200 py-3"
+        className="flex items-center w-full  cursor-pointer justify-between rounded px-2 my-1 flex-row-reverse group hover:bg-green-100 transition-all duration-200 py-3 text-sm md:text-[16px]"
       >
         <GoArrowRight className="hover:text-green-600 transition-all hover:translate-x-1  duration-200 scale-110 group-hover:animate-bounce group-hover:text-green-600" />
         <div className="flex items-center gap-1 group-hover:text-green-600">
@@ -60,7 +60,7 @@ const SocialPage = () => {
       <a
         href="https://github.com/beingbadguy"
         target="_blank"
-        className="flex items-center w-full  cursor-pointer justify-between rounded px-2 my-1 flex-row-reverse group hover:bg-green-100 transition-all duration-200 py-3"
+        className="flex items-center w-full  cursor-pointer justify-between rounded px-2 my-1 flex-row-reverse group hover:bg-green-100 transition-all duration-200 py-3 text-sm md:text-[16px]"
       >
         <GoArrowRight className="hover:text-green-600 hover:translate-x-1 transition-all duration-200 scale-110 group-hover:animate-bounce group-hover:text-green-600" />
         <div className="flex items-center gap-1 group-hover:text-green-600">
