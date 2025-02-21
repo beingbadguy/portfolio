@@ -1,4 +1,4 @@
-import { FaLinkedin } from "react-icons/fa6";
+import { FaInstagram, FaLinkedin } from "react-icons/fa6";
 import { GoArrowRight } from "react-icons/go";
 import { HiOutlineDocumentText } from "react-icons/hi";
 import { LuGithub } from "react-icons/lu";
@@ -22,7 +22,7 @@ const SocialPage = () => {
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="m-4 flex items-center justify-center mb-20 flex-col gap-4  "
+      className="m-4 flex items-center justify-center mb-20 flex-col gap-2  "
     >
       <a
         href="https://drive.google.com/file/d/1Nzr-SM0lRLO7s3C0peDA5HwfsnZotrEy/view?usp=sharing"
@@ -69,10 +69,23 @@ const SocialPage = () => {
         </div>
       </a>
 
+      <a
+        href="https://www.instagram.com/heyamann/"
+        target="_blank"
+        className="flex items-center w-full  cursor-pointer justify-between rounded px-2 my-1 flex-row-reverse group hover:bg-green-100 transition-all duration-200 py-3 text-sm md:text-[16px]"
+      >
+        <GoArrowRight className="hover:text-green-600 hover:translate-x-1 transition-all duration-200 scale-110 group-hover:animate-bounce group-hover:text-green-600" />
+        <div className="flex items-center gap-1 group-hover:text-green-600">
+          <FaInstagram size={25} className="group-hover:" />
+          Instagram
+        </div>
+      </a>
+
       {/* fun starts from here  */}
       <div className="flex items-start text-left justify-start  w-full flex-col">
         <h1 className="text-left font-semibold text-md my-2 texty flex items-center gap-1">
-          Now Playing <IoIosMusicalNote />
+          Now Playing{" "}
+          <IoIosMusicalNote className={isPlaying ? "" : ""} />
         </h1>
         <div className="flex justify-between items-center w-full">
           <div className="flex gap-4">

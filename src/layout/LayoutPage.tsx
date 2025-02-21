@@ -16,7 +16,7 @@ const LayoutPage = () => {
 
   const clickSound = () => {
     const audio = new Audio("btn.mp3");
-    audio.volume = 0.5;
+    audio.volume = 0.1;
     audio.play();
   };
 
