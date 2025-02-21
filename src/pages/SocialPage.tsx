@@ -11,10 +11,19 @@ import { IoPauseOutline } from "react-icons/io5";
 import { useAudioStore } from "../store";
 
 const SocialPage = () => {
-  const { setAudio, playAudio, pauseAudio, isPlaying } = useAudioStore();
+  const { setAudio, playAudio, pauseAudio, isPlaying, duration, currentTime } =
+    useAudioStore();
   useEffect(() => {
     setAudio();
   }, []);
+
+  const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
+
+  useEffect(() => {
+    if (progress == 100) {
+      pauseAudio();
+    }
+  }, [progress]);
 
   return (
     <motion.div
@@ -29,8 +38,8 @@ const SocialPage = () => {
         target="_blank"
         className="group flex items-center w-full  cursor-pointer justify-between rounded px-2 my-1 flex-row-reverse hover:bg-green-100 transition-all duration-200 py-3 text-sm md:text-[16px]"
       >
-        <GoArrowRight className="hover:text-green-600 transition-all hover:translate-x-1  duration-200 scale-110 group-hover:animate-bounce group-hover:text-green-600" />
-        <div className="flex items-center gap-1 group-hover:text-green-600">
+        <GoArrowRight className="hover:text-violet-600 transition-all hover:translate-x-1  duration-200 scale-110 group-hover:animate-bounce group-hover:text-violet-600" />
+        <div className="flex items-center gap-1 group-hover:text-violet-600">
           <HiOutlineDocumentText size={25} />
           Resume
         </div>
@@ -51,8 +60,8 @@ const SocialPage = () => {
         target="_blank"
         className="flex items-center w-full  cursor-pointer justify-between rounded px-2 my-1 flex-row-reverse group hover:bg-green-100 transition-all duration-200 py-3 text-sm md:text-[16px]"
       >
-        <GoArrowRight className="hover:text-green-600 transition-all hover:translate-x-1  duration-200 scale-110 group-hover:animate-bounce group-hover:text-green-600" />
-        <div className="flex items-center gap-1 group-hover:text-green-600">
+        <GoArrowRight className="hover:text-blue-600 transition-all hover:translate-x-1  duration-200 scale-110 group-hover:animate-bounce group-hover:text-blue-600" />
+        <div className="flex items-center gap-1 group-hover:text-blue-600">
           <FaLinkedin size={25} />
           LinkedIn
         </div>
@@ -62,8 +71,8 @@ const SocialPage = () => {
         target="_blank"
         className="flex items-center w-full  cursor-pointer justify-between rounded px-2 my-1 flex-row-reverse group hover:bg-green-100 transition-all duration-200 py-3 text-sm md:text-[16px]"
       >
-        <GoArrowRight className="hover:text-green-600 hover:translate-x-1 transition-all duration-200 scale-110 group-hover:animate-bounce group-hover:text-green-600" />
-        <div className="flex items-center gap-1 group-hover:text-green-600">
+        <GoArrowRight className="hover:text-gray-600 hover:translate-x-1 transition-all duration-200 scale-110 group-hover:animate-bounce group-hover:text-gray-600" />
+        <div className="flex items-center gap-1 group-hover:text-gray-600">
           <LuGithub size={25} />
           Github
         </div>
@@ -74,9 +83,9 @@ const SocialPage = () => {
         target="_blank"
         className="flex items-center w-full  cursor-pointer justify-between rounded px-2 my-1 flex-row-reverse group hover:bg-green-100 transition-all duration-200 py-3 text-sm md:text-[16px]"
       >
-        <GoArrowRight className="hover:text-green-600 hover:translate-x-1 transition-all duration-200 scale-110 group-hover:animate-bounce group-hover:text-green-600" />
-        <div className="flex items-center gap-1 group-hover:text-green-600">
-          <FaInstagram size={25} className="group-hover:" />
+        <GoArrowRight className="hover:text-pink-600 hover:translate-x-1 transition-all duration-200 scale-110 group-hover:animate-bounce group-hover:text-pink-600" />
+        <div className="flex items-center gap-1 group-hover:text-pink-600">
+          <FaInstagram size={25} className="group-hover:text-pink-500" />
           Instagram
         </div>
       </a>
@@ -84,8 +93,7 @@ const SocialPage = () => {
       {/* fun starts from here  */}
       <div className="flex items-start text-left justify-start  w-full flex-col">
         <h1 className="text-left font-semibold text-md my-2 texty flex items-center gap-1">
-          Now Playing{" "}
-          <IoIosMusicalNote className={isPlaying ? "" : ""} />
+          Now Playing <IoIosMusicalNote className={isPlaying ? "" : ""} />
         </h1>
         <div className="flex justify-between items-center w-full">
           <div className="flex gap-4">
@@ -117,6 +125,16 @@ const SocialPage = () => {
             )}
           </button>
         </div>
+        {/* Progress Bar */}
+        <div className="w-full h-1  mt-4 relative">
+          <div
+            className="h-full bg-green-500  transition-all duration-200"
+            style={{ width: `${progress}%` }}
+          ></div>
+        </div>
+
+        {/* Time Display */}
+        {/* <p className="text-sm text-gray-400 mt-2">{Math.floor(progress)}%</p> */}
       </div>
     </motion.div>
   );
