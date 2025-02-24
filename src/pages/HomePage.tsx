@@ -1,8 +1,19 @@
 import { IoIosArrowRoundForward } from "react-icons/io";
-import { RiMailLine } from "react-icons/ri";
-import { SiMaildotru } from "react-icons/si";
+import { RiFirebaseFill, RiMailLine } from "react-icons/ri";
+import {
+  SiCss3,
+  SiExpress,
+  SiMaildotru,
+  SiReactquery,
+  SiSocketdotio,
+  SiTailwindcss,
+} from "react-icons/si";
 import Skills from "../components/Skills";
 import { motion } from "motion/react";
+import { DiJavascript1, DiReact } from "react-icons/di";
+import { BiLogoTypescript } from "react-icons/bi";
+import { FaGithub, FaHtml5, FaNodeJs, FaPython } from "react-icons/fa6";
+import { TbBrandFramerMotion } from "react-icons/tb";
 
 const HomePage = () => {
   return (
@@ -28,6 +39,28 @@ const HomePage = () => {
       >
         Hey, I'm Aman a{" "}
         <span className="bg-green-500 text-white ">full stack developer</span>{" "}
+        {/* <div className="inline-block">
+          {position.split("").map((element, index) => (
+            <motion.span
+              initial={{
+                opacity: 0,
+                filter: "blur(20px)",
+              }}
+              whileInView={{
+                opacity: 1,
+                filter: "blur(0px)",
+                transition: {
+                  duration: 0.1 * index,
+                  ease: "easeOut",
+                },
+              }}
+              className="  text-green-500"
+              key={index}
+            >
+              {element}
+            </motion.span>
+          ))}
+        </div>{" "} */}
         passionate about building real-world projects. I love creating seamless
         user experiences, whether it’s an e-commerce platform, social media app,
         or a high-performance web app. When I’m not coding, I’m either playing
@@ -62,23 +95,59 @@ const HomePage = () => {
           viewport={{ once: true }}
           className="flex gap-2 my-2 flex-wrap "
         >
-          <Skills skill={"JavaScript"} yes={false} />
-          <Skills skill={"TypeScript"} yes={false} />
-          <Skills skill={"React"} yes={false} />
-          <Skills skill={"Node.js"} yes={false} />
-          <Skills skill={"Express.js"} yes={false} />
-          <Skills skill={"HTML"} yes={false} />
-          <Skills skill={"CSS"} yes={false} />
-          <Skills skill={"Tailwind"} yes={false} />
-          <Skills skill={"Framer Motion"} yes={false} />
+          <Skills
+            skill={"JavaScript"}
+            yes={false}
+            icon={<DiJavascript1 size={15} />}
+          />
+          <Skills
+            skill={"TypeScript"}
+            yes={false}
+            icon={<BiLogoTypescript size={15} />}
+          />
+          <Skills skill={"React"} yes={false} icon={<DiReact size={15} />} />
+          <Skills skill={"Node.js"} yes={false} icon={<FaNodeJs size={15} />} />
+          <Skills
+            skill={"Express.js"}
+            yes={false}
+            icon={<SiExpress size={15} />}
+          />
+          <Skills skill={"HTML"} yes={false} icon={<FaHtml5 size={15} />} />
+          <Skills skill={"CSS"} yes={false} icon={<SiCss3 size={15} />} />
+          <Skills
+            skill={"Tailwind"}
+            yes={false}
+            icon={<SiTailwindcss size={15} />}
+          />
+          <Skills
+            skill={"Framer Motion"}
+            yes={false}
+            icon={<TbBrandFramerMotion size={15} />}
+          />
           <Skills skill={"Zustand"} yes={false} />
-          <Skills skill={"Socket.io"} yes={false} />
-          <Skills skill={"Firebase"} yes={false} />
-          <Skills skill={"React Query"} yes={false} />
-          <Skills skill={"Python"} yes={false} />
-          <Skills skill={"Git/Github"} yes={false} />
-          <Skills skill={"C++"} yes={false} />
+          <Skills
+            skill={"Socket.io"}
+            yes={false}
+            icon={<SiSocketdotio size={15} />}
+          />
+          <Skills
+            skill={"Firebase"}
+            yes={false}
+            icon={<RiFirebaseFill size={15} />}
+          />
           <Skills skill={"C"} yes={false} />
+          <Skills
+            skill={"React Query"}
+            yes={false}
+            icon={<SiReactquery size={15} />}
+          />
+          <Skills skill={"C++"} yes={false} />
+          <Skills skill={"Python"} yes={false} icon={<FaPython size={15} />} />
+          <Skills
+            skill={"Git/Github"}
+            yes={false}
+            icon={<FaGithub size={15} />}
+          />
         </motion.div>
       </div>
     </div>
