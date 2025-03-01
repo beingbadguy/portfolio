@@ -63,8 +63,8 @@ const HomePage = () => {
         </div>{" "} */}
         passionate about building real-world projects. I love creating seamless
         user experiences, whether it’s an e-commerce platform, social media app,
-        or a high-performance web app. When I’m not coding, I’m either playing
-        football, exploring new tech, or refining my skills.
+        or a high-performance web app. off the screen, you'll find me playing
+        football, diving into new tech, or sharpening my skills.
       </motion.h1>
       <div className="my-2 flex items-center lg:gap-10 mt-5 flex-wrap">
         <div className="flex items-center">
