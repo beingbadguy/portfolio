@@ -116,11 +116,11 @@ const LayoutPage = () => {
           <div className="w-full">
             <Outlet />
           </div>
-          <nav className=" fixed bottom-0 py-6  flex items-center gap-8  text-blacks  backdrop-blur-lg w-full justify-center  ">
+          <nav className=" fixed bottom-0 py-3 pb-4  flex items-center gap-8  text-black  backdrop-blur-lg w-full justify-center  ">
             <div className="bg-green-300" />
             <div className="relative">
               <RiHome6Line
-                size={27}
+                size={25}
                 className={`${
                   pathname == "/" ? " text-green-500 md:text-black" : ""
                 } hover:-translate-y-1 hover:text-green-500 transition-all ease-in-out cursor-pointer duration-300`}
@@ -139,7 +139,7 @@ const LayoutPage = () => {
             </div>
             <div className="relative">
               <FaRegFolderClosed
-                size={24}
+                size={20}
                 className={`${
                   pathname == "/projects" ? " text-green-500 md:text-black" : ""
                 } hover:-translate-y-1 hover:text-green-500 transition-all ease-in-out cursor-pointer duration-300`}
@@ -160,7 +160,7 @@ const LayoutPage = () => {
 
             <div className="relative">
               <MdOutlineSchool
-                size={30}
+                size={25}
                 className={`${
                   pathname == "/education"
                     ? " text-green-500 md:text-black"
@@ -211,7 +211,7 @@ const LayoutPage = () => {
         </div> */}
             <div className="relative">
               <ImConnection
-                size={25}
+                size={22}
                 className={`${
                   pathname == "/socials" ? " text-green-500 md:text-black" : ""
                 } hover:-translate-y-1 hover:text-green-500 transition-all ease-in-out cursor-pointer duration-300`}
