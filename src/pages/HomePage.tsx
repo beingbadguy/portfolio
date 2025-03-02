@@ -33,38 +33,17 @@ const HomePage = () => {
         initial={{ opacity: 0, y: -10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        viewport={{ once: true }} // Ensures animation runs only once
-        className=" selection:bg-yellow-500 selection:text-white text-sm md:text-[16px]"
+        viewport={{ once: true }}
+        className="selection:bg-yellow-500 selection:text-white text-sm md:text-[16px]"
       >
-        Hey, I'm Aman a{" "}
-        <span className="bg-green-500 text-white ">full stack developer</span>{" "}
-        {/* <div className="inline-block">
-          {position.split("").map((element, index) => (
-            <motion.span
-              initial={{
-                opacity: 0,
-                filter: "blur(20px)",
-              }}
-              whileInView={{
-                opacity: 1,
-                filter: "blur(0px)",
-                transition: {
-                  duration: 0.1 * index,
-                  ease: "easeOut",
-                },
-              }}
-              className="  text-green-500"
-              key={index}
-            >
-              {element}
-            </motion.span>
-          ))}
-        </div>{" "} */}
-        passionate about building real-world projects. I love creating seamless
-        user experiences, whether it’s an e-commerce platform, social media app,
-        or a high-performance web app. off the screen, you'll find me playing
-        football, diving into new tech, or sharpening my skills.
+        Hey, I'm Aman, a{" "}
+        <span className="bg-green-500 text-white">full stack developer</span>{" "}
+          with experience in building scalable web applications. I specialize in
+        developing e-commerce platforms, social media apps, and high-performance
+        web apps. Always eager to learn and improve, I am passionate about
+        delivering seamless user experiences and solving real-world problems.
       </motion.h1>
+
       <div className="my-2 flex items-center lg:gap-10 mt-5 flex-wrap">
         <div className="flex items-center">
           {/* <IoIosArrowRoundForward size={30} /> */}
