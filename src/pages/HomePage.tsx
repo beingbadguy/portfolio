@@ -112,8 +112,8 @@ const HomePage = () => {
             yes={false}
             icon={<SiExpress size={15} />}
           />
-          <Skills skill={"HTML"} yes={false} icon={<FaHtml5 size={15} />} />
-          <Skills skill={"CSS"} yes={false} icon={<SiCss3 size={15} />} />
+          {/* <Skills skill={"HTML"} yes={false} icon={<FaHtml5 size={15} />} /> */}
+          {/* <Skills skill={"CSS"} yes={false} icon={<SiCss3 size={15} />} /> */}
           <Skills
             skill={"Tailwind"}
             yes={false}
