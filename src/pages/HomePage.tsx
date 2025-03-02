@@ -1,7 +1,6 @@
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { RiFirebaseFill, RiMailLine } from "react-icons/ri";
 import {
-  SiCss3,
   SiExpress,
   SiMaildotru,
   SiReactquery,
@@ -12,7 +11,7 @@ import Skills from "../components/Skills";
 import { motion } from "motion/react";
 import { DiJavascript1, DiReact } from "react-icons/di";
 import { BiLogoTypescript } from "react-icons/bi";
-import { FaGithub, FaHtml5, FaNodeJs, FaPython } from "react-icons/fa6";
+import { FaGithub, FaNodeJs, FaPython } from "react-icons/fa6";
 import { TbBrandFramerMotion } from "react-icons/tb";
 
 const HomePage = () => {
