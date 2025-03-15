@@ -27,6 +27,23 @@ const ProjectPage = () => {
         github="https://github.com/beingbadguy/JerseyNation"
       />
       <Project
+        name="Chatty"
+        live="https://chattyapp-gy71.onrender.com/"
+        skills={[
+          "React.js",
+          "Node.js",
+          "Express.js",
+          "MongoDB",
+          "Socket.io",
+          "Zustand",
+          "TailwindCSS",
+          "React Query",
+          "Axios",
+        ]}
+        description="Chatty, a photo-sharing, real-time talk app with online status, typing indicators, and secure user authentication."
+        github="https://github.com/beingbadguy/chattyApp"
+      />
+      <Project
         name="Bulletin"
         live="https://bulletin-is7s.onrender.com/"
         skills={[
