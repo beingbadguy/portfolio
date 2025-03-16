@@ -61,6 +61,19 @@ const ProjectPage = () => {
         github="https://github.com/beingbadguy/JerseyNation"
       />{" "}
       <Project
+        name="Amy"
+        live="https://lenny-phi.vercel.app/"
+        skills={[
+          "React.js",
+          "Firebase",
+          "EmailJS",
+          "TailwindCSS",
+          "ContextAPI",
+        ]}
+        description="Amy is a dynamic e-commerce platform designed to provide users with a seamless online shopping experience. It offers a wide range of products with advanced features like secure user authentication, smooth checkout processes and email notifications. "
+        github="https://github.com/beingbadguy/JerseyNation"
+      />{" "}
+      <Project
         name="JobConnect"
         live="https://job-connect-taupe.vercel.app/"
         skills={["React.js", "TailwindCSS", "Firebase", "ContextAPI"]}
