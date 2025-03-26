@@ -82,6 +82,26 @@ const ProjectPage = () => {
         github="https://github.com/beingbadguy/JobConnect"
       />
       <Project
+        name="Pinterest Clone"
+        live="https://pinterest-frontend-xi.vercel.app/home"
+        skills={[
+          "React.js",
+          "Typescript",
+          "Node.js",
+          "Express.js",
+          "MongoDB",
+          "Nodemailer",
+          "TailwindCSS",
+          "React Query",
+          "Axios",
+          "Framer-motion",
+          "Zustand",
+          "Cloudinary",
+        ]}
+        description="Pinterest Clone, a visual discovery platform that enables users to explore, save, and share creative ideas. With features like user authentication, image uploads, real-time notifications, personalized boards, and an intuitive search, it offers a seamless and engaging experience for discovering and organizing inspiration."
+        github="https://pinterest-frontend-xi.vercel.app/home"
+      />{" "}
+      <Project
         name="EstateNation"
         live="https://estate-nation.vercel.app/"
         skills={["React.js", "TailwindCSS", "Firebase", "ContextAPI"]}
