@@ -69,7 +69,7 @@ const ProjectPage = () => {
         live="https://colorshader.vercel.app/"
         skills={["React.js", "TailwindCSS", "ContextAPI", "Firebase"]}
         description="Coolors Clone is a sleek and intuitive color palette generator built with React.js, TailwindCSS, and Firebase. It allows users to effortlessly create, explore, and save stunning color combinations. With real-time updates, seamless user authentication, and a dynamic UI, this tool makes color selection and inspiration easier than ever."
-        github="https://colorshader.vercel.app/"
+        github="https://github.com/beingbadguy/coolorsClone"
       />{" "}
       <Project
         name="EstateNation"
