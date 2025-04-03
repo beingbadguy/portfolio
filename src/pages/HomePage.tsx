@@ -38,7 +38,7 @@ const HomePage = () => {
       >
         Hey, I'm Aman, a{" "}
         <span className="bg-green-500 text-white">full stack developer</span>{" "}
-          with experience in building scalable web applications. I specialize in
+        with experience in building scalable web applications. I specialize in
         developing e-commerce platforms, social media apps, and high-performance
         web apps. Always eager to learn and improve, I am passionate about
         delivering seamless user experiences and solving real-world problems.
