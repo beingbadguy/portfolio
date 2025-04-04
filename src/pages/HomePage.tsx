@@ -1,5 +1,5 @@
 import { IoIosArrowRoundForward } from "react-icons/io";
-import { RiFirebaseFill, RiMailLine } from "react-icons/ri";
+import { RiFirebaseFill, RiMailLine, RiNextjsFill } from "react-icons/ri";
 import {
   SiExpress,
   SiMaildotru,
@@ -74,6 +74,11 @@ const HomePage = () => {
           className="flex gap-2 my-2 flex-wrap "
         >
           <Skills
+            skill={"NextJS"}
+            yes={false}
+            icon={<RiNextjsFill size={15} />}
+          />
+          <Skills
             skill={"JavaScript"}
             yes={false}
             icon={<DiJavascript1 size={15} />}
@@ -83,7 +88,7 @@ const HomePage = () => {
             yes={false}
             icon={<BiLogoTypescript size={15} />}
           />
-          <Skills skill={"React"} yes={false} icon={<DiReact size={15} />} />
+          <Skills skill={"ReactJS"} yes={false} icon={<DiReact size={15} />} />
           <Skills skill={"Node.js"} yes={false} icon={<FaNodeJs size={15} />} />
           <Skills
             skill={"Express.js"}
@@ -93,7 +98,7 @@ const HomePage = () => {
           {/* <Skills skill={"HTML"} yes={false} icon={<FaHtml5 size={15} />} /> */}
           {/* <Skills skill={"CSS"} yes={false} icon={<SiCss3 size={15} />} /> */}
           <Skills
-            skill={"Tailwind"}
+            skill={"TailwindCSS"}
             yes={false}
             icon={<SiTailwindcss size={15} />}
           />
@@ -104,7 +109,7 @@ const HomePage = () => {
           />
           <Skills skill={"Zustand"} yes={false} />
           <Skills
-            skill={"Socket.io"}
+            skill={"Socket.IO"}
             yes={false}
             icon={<SiSocketdotio size={15} />}
           />
@@ -115,7 +120,7 @@ const HomePage = () => {
           />
           <Skills skill={"C"} yes={false} />
           <Skills
-            skill={"React Query"}
+            skill={"TanStack Query"}
             yes={false}
             icon={<SiReactquery size={15} />}
           />
