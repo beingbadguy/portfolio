@@ -11,6 +11,20 @@ const ProjectPage = () => {
       className="m-8 mb-20 flex flex-col gap-5  "
     >
       <Project
+        name="BASICS"
+        live="https://shopbasics.vercel.app/"
+        skills={[
+          "Next.js",
+          "MongoDB",
+          "Nodemailer",
+          "TailwindCSS",
+          "Zustand",
+          "Axios",
+        ]}
+        description="BASICS is a modern e-commerce platform built for a seamless shopping experience, supporting multiple product categories and a full-featured admin dashboard. It’s designed to be fast, intuitive, and scalable — perfect for growing online stores. "
+        github="https://github.com/beingbadguy/BASICS"
+      />
+      <Project
         name="JerseyNation"
         live="https://jerseynation.onrender.com/"
         skills={[
