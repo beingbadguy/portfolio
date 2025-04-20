@@ -34,7 +34,7 @@ const SocialPage = () => {
       className="m-4 flex items-center justify-center mb-20 flex-col gap-2  "
     >
       <a
-        href="https://drive.google.com/file/d/1Nzr-SM0lRLO7s3C0peDA5HwfsnZotrEy/view?usp=sharing"
+        href="https://drive.google.com/file/d/1NOG2upAtfFoG4qPBJ7Hy5P9uEMsdSOTH/view?usp=sharing"
         target="_blank"
         className="group flex items-center w-full  cursor-pointer justify-between rounded px-2 my-1 flex-row-reverse hover:bg-green-100 transition-all duration-200 py-3 text-sm md:text-[16px]"
       >
