@@ -109,7 +109,7 @@ const ProjectPage = () => {
         description="Chatty, a photo-sharing, real-time talk app with online status, typing indicators, and secure user authentication."
         github="https://github.com/beingbadguy/chattyApp"
       />
-      <Project
+      {/* <Project
         name="Pinterest Clone"
         live="https://pinterest-frontend-xi.vercel.app/home"
         skills={[
@@ -128,7 +128,7 @@ const ProjectPage = () => {
         ]}
         description="Pinterest Clone, a visual discovery platform that enables users to explore, save, and share creative ideas. With features like user authentication, image uploads, real-time notifications, personalized boards, and an intuitive search, it offers a seamless and engaging experience for discovering and organizing inspiration."
         github="https://pinterest-frontend-xi.vercel.app/home"
-      />{" "}
+      />{" "} */}
     </motion.div>
   );
 };
