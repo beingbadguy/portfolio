@@ -109,26 +109,19 @@ const ProjectPage = () => {
         description="Chatty, a photo-sharing, real-time talk app with online status, typing indicators, and secure user authentication."
         github="https://github.com/beingbadguy/chattyApp"
       />
-      {/* <Project
-        name="Pinterest Clone"
-        live="https://pinterest-frontend-xi.vercel.app/home"
+      <Project
+        name="Quiz App"
+        live="https://quizzygame.vercel.app"
         skills={[
           "React.js",
-          "Typescript",
-          "Node.js",
-          "Express.js",
-          "MongoDB",
-          "Nodemailer",
+          "Firebase",
           "TailwindCSS",
-          "React Query",
-          "Axios",
-          "Framer-motion",
-          "Zustand",
-          "Cloudinary",
+          "ContextAPI",
+          "Gemini AI",
         ]}
-        description="Pinterest Clone, a visual discovery platform that enables users to explore, save, and share creative ideas. With features like user authentication, image uploads, real-time notifications, personalized boards, and an intuitive search, it offers a seamless and engaging experience for discovering and organizing inspiration."
-        github="https://pinterest-frontend-xi.vercel.app/home"
-      />{" "} */}
+        description="Quiz App is an interactive quiz platform built with React.js and powered by Firebase for real-time data management and user authentication. Users can attempt AI-generated quizzes using Gemini AI, track scores, and review correct answers instantly."
+        github="https://github.com/beingbadguy/quizy"
+      />{" "}
     </motion.div>
   );
 };
