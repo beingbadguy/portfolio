@@ -3,6 +3,7 @@ import Skills from "./Skills";
 import { LuGithub } from "react-icons/lu";
 import { FiExternalLink } from "react-icons/fi";
 import { motion } from "motion/react";
+import { useAudioStore } from "../store";
 
 interface propType {
   name: string;
@@ -12,6 +13,7 @@ interface propType {
   github: string;
 }
 const Project = (prop: propType) => {
+  const { isLight } = useAudioStore();
   return (
     <motion.div
       initial={{ opacity: 0, y: -10 }}
@@ -20,11 +22,15 @@ const Project = (prop: propType) => {
       viewport={{ once: true }}
     >
       <div className="flex items-center gap-2">
-        <FaRegFolderClosed className="text-gray-500" />
+        <FaRegFolderClosed
+          className={`${isLight ? "text-gray-500" : "text-white"}`}
+        />
         <a
           href={prop.live}
           target="_blank"
-          className="font-semibold border-b text-sm cursor-pointer"
+          className={` ${
+            isLight ? "text-gray-500" : "text-white"
+          } font-semibold border-b text-sm cursor-pointer`}
         >
           {prop.name}
         </a>

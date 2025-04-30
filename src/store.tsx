@@ -1,10 +1,13 @@
 import { create } from "zustand";
 
 interface AudioState {
+  isLight: boolean;
   isPlaying: boolean;
   audio: HTMLAudioElement | null;
   duration: number;
   currentTime: number;
+  setTheme: () => void;
+  getTheme: () => void;
   setAudio: () => void;
   playAudio: () => void;
   pauseAudio: () => void;
@@ -12,10 +15,22 @@ interface AudioState {
 }
 
 export const useAudioStore = create<AudioState>((set, get) => ({
+  isLight: true,
   isPlaying: false,
   audio: null,
   duration: 0,
   currentTime: 0,
+  setTheme: () => {
+    set({ isLight: !get().isLight });
+    localStorage.setItem("theme", get().isLight ? "light" : "dark");
+    // console.log("GETTING: ", localStorage.getItem("theme"));
+  },
+  getTheme: () => {
+    const theme = localStorage.getItem("theme");
+
+    // console.log("SETTING: ", theme);
+    set({ isLight: theme === "light" ? true : false });
+  },
 
   setAudio: () => {
     const { audio } = get();

@@ -11,8 +11,15 @@ import { IoPauseOutline } from "react-icons/io5";
 import { useAudioStore } from "../store";
 
 const SocialPage = () => {
-  const { setAudio, playAudio, pauseAudio, isPlaying, duration, currentTime } =
-    useAudioStore();
+  const {
+    setAudio,
+    playAudio,
+    pauseAudio,
+    isPlaying,
+    duration,
+    currentTime,
+    isLight,
+  } = useAudioStore();
   useEffect(() => {
     setAudio();
   }, []);
@@ -31,7 +38,9 @@ const SocialPage = () => {
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="m-4 flex items-center justify-center mb-20 flex-col gap-2  "
+      className={` ${
+        isLight ? "text-black" : "text-white"
+      } m-4 flex items-center justify-center mb-20 flex-col gap-2  `}
     >
       {/* <a
         href="https://drive.google.com/file/d/1x8k36tFh00I_x7dbITxM31Vl3JD9PtGd/view?usp=sharing"

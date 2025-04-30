@@ -13,8 +13,10 @@ import { DiJavascript1, DiReact } from "react-icons/di";
 import { BiLogoTypescript } from "react-icons/bi";
 import { FaGithub, FaNodeJs, FaPython } from "react-icons/fa6";
 import { TbBrandFramerMotion } from "react-icons/tb";
+import { useAudioStore } from "../store";
 
 const HomePage = () => {
+  const { isLight } = useAudioStore();
   return (
     <div className="m-4 mb-20 text-sm md:text-[16px] ">
       <div className="">
@@ -34,10 +36,16 @@ const HomePage = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="selection:bg-yellow-500 selection:text-white text-sm md:text-[16px]"
+        className={`selection:bg-yellow-500  ${
+          isLight ? "text-black" : "text-white"
+        } selection:text-white text-sm md:text-[16px]`}
       >
         Hey, I'm Aman, a{" "}
-        <span className="bg-green-500 text-white">full stack developer</span>{" "}
+        <span
+          className={`bg-green-500  ${isLight ? "text-white" : "text-white"} `}
+        >
+          full stack developer
+        </span>{" "}
         with experience in building scalable web applications. I specialize in
         developing e-commerce platforms, social media apps, and high-performance
         web apps. Always eager to learn and improve, I am passionate about
@@ -45,7 +53,11 @@ const HomePage = () => {
       </motion.h1>
 
       <div className="my-2 flex items-center lg:gap-10 mt-5 flex-wrap">
-        <div className="flex items-center">
+        <div
+          className={` ${
+            isLight ? "text-black" : "text-white"
+          } flex items-center`}
+        >
           {/* <IoIosArrowRoundForward size={30} /> */}
           <p>By the way, I'm open to projects and work.</p>
         </div>
@@ -56,16 +68,30 @@ const HomePage = () => {
           />
           <a href="mailto:authorisedaman@gmail.com">
             {" "}
-            <SiMaildotru className=" cursor-pointer hover:text-green-700 transition-all duration-200" />{" "}
+            <SiMaildotru
+              className={`  cursor-pointer ${
+                isLight ? "text-black" : "text-white"
+              } hover:text-green-700  transition-all duration-200`}
+            />{" "}
           </a>
-          /
+          <span className={` ${isLight ? "text-black" : "text-white"}`}>/</span>
           <a href="mailto:authorisedaman@gmail.com">
-            <RiMailLine className=" cursor-pointer hover:text-green-700 transition-all duration-200" />
+            <RiMailLine
+              className={`  cursor-pointer ${
+                isLight ? "text-black" : "text-white"
+              } hover:text-green-700  transition-all duration-200`}
+            />
           </a>
         </div>
       </div>
       <div className="select-none">
-        <h1 className="font-semibold mt-10">Skills and Technologies </h1>
+        <h1
+          className={` font-semibold mt-10 ${
+            isLight ? "text-black" : "text-white"
+          } `}
+        >
+          Skills and Technologies{" "}
+        </h1>
         <motion.div
           initial={{ filter: "blur(3px)", y: -20 }}
           whileInView={{ filter: "blur(0px)", y: 0 }}

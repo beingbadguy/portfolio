@@ -1,7 +1,9 @@
 import { motion } from "motion/react";
 import Education from "../components/Education";
+import { useAudioStore } from "../store";
 
 const EducationPage = () => {
+  const { isLight } = useAudioStore();
   const text = `Those who are committed to nothing, are distracted by everything.`;
 
   const letters = text.split(" ");
@@ -32,7 +34,11 @@ const EducationPage = () => {
         stream="Science, Maths, English"
         period="2013 - 2018"
       />
-      <div className="w-full mt-10 relative select-none p-4 text-sm" >
+      <div
+        className={` ${
+          isLight ? "text-black" : "text-white"
+        } w-full mt-10 relative select-none p-4 text-sm`}
+      >
         <span className="text-6xl tracking-[-24px] transform rotate-180 inline-block ml-2">
           ,,
         </span>
