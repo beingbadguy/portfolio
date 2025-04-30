@@ -1,6 +1,6 @@
 import { FaInstagram, FaLinkedin } from "react-icons/fa6";
 import { GoArrowRight } from "react-icons/go";
-import { HiOutlineDocumentText } from "react-icons/hi";
+// import { HiOutlineDocumentText } from "react-icons/hi";
 import { LuGithub } from "react-icons/lu";
 import { MdOutlineMail } from "react-icons/md";
 import { motion } from "motion/react";
@@ -33,8 +33,8 @@ const SocialPage = () => {
       viewport={{ once: true }}
       className="m-4 flex items-center justify-center mb-20 flex-col gap-2  "
     >
-      <a
-        href="https://drive.google.com/file/d/1NOG2upAtfFoG4qPBJ7Hy5P9uEMsdSOTH/view?usp=sharing"
+      {/* <a
+        href="https://drive.google.com/file/d/1x8k36tFh00I_x7dbITxM31Vl3JD9PtGd/view?usp=sharing"
         target="_blank"
         className="group flex items-center w-full  cursor-pointer justify-between rounded px-2 my-1 flex-row-reverse hover:bg-green-100 transition-all duration-200 py-3 text-sm md:text-[16px]"
       >
@@ -43,7 +43,7 @@ const SocialPage = () => {
           <HiOutlineDocumentText size={25} />
           Resume
         </div>
-      </a>
+      </a> */}
       <a
         href="mailto:authorisedaman@gmail.com"
         target="_blank"
@@ -79,7 +79,7 @@ const SocialPage = () => {
       </a>
 
       <a
-        href="https://www.instagram.com/heyamann/"
+        href="https://www.instagram.com/beingbadguy"
         target="_blank"
         className="flex items-center w-full  cursor-pointer justify-between rounded px-2 my-1 flex-row-reverse group hover:bg-green-100 transition-all duration-200 py-3 text-sm md:text-[16px]"
       >
