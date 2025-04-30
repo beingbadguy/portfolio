@@ -23,13 +23,13 @@ const Project = (prop: propType) => {
     >
       <div className="flex items-center gap-2">
         <FaRegFolderClosed
-          className={`${isLight ? "text-gray-500" : "text-white"}`}
+          className={`${isLight ? "text-black" : "text-white"}`}
         />
         <a
           href={prop.live}
           target="_blank"
           className={` ${
-            isLight ? "text-gray-500" : "text-white"
+            isLight ? "text-black" : "text-white"
           } font-semibold border-b text-sm cursor-pointer`}
         >
           {prop.name}
