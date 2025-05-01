@@ -14,9 +14,14 @@ import { BiLogoTypescript } from "react-icons/bi";
 import { FaGithub, FaNodeJs, FaPython } from "react-icons/fa6";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { useAudioStore } from "../store";
+import { useEffect } from "react";
 
 const HomePage = () => {
   const { isLight } = useAudioStore();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="m-4 mb-20 text-sm md:text-[16px] ">
       <div className="">

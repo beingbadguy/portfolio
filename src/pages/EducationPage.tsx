@@ -1,12 +1,17 @@
 import { motion } from "motion/react";
 import Education from "../components/Education";
 import { useAudioStore } from "../store";
+import { useEffect } from "react";
 
 const EducationPage = () => {
   const { isLight } = useAudioStore();
   const text = `Those who are committed to nothing, are distracted by everything.`;
 
   const letters = text.split(" ");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <motion.div

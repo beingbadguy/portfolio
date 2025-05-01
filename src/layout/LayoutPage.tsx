@@ -64,7 +64,7 @@ const LayoutPage = () => {
   }, []);
 
   useEffect(() => {
-    document.body.style.background = isLight ? "#f0fdf4" : "#01161e";
+    document.body.style.background = isLight ? "#f0fdf4" : "#000000";
     document.body.style.backgroundImage = isLight
       ? `url("https://www.transparenttextures.com/patterns/brilliant.png")`
       : "none";

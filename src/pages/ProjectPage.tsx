@@ -1,7 +1,11 @@
+import { useEffect } from "react";
 import Project from "../components/Project";
 import { motion } from "motion/react";
 
 const ProjectPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <motion.div
       initial={{ opacity: 0, y: -10, filter: "blur(3px)" }}

@@ -8,7 +8,7 @@ const Skills = ({
   skill: string;
   yes?: boolean;
   icon?: React.ReactNode;
-  }) => {
+}) => {
   const { isLight } = useAudioStore();
   return (
     <motion.div

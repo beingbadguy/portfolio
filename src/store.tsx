@@ -23,13 +23,15 @@ export const useAudioStore = create<AudioState>((set, get) => ({
   setTheme: () => {
     set({ isLight: !get().isLight });
     localStorage.setItem("theme", get().isLight ? "light" : "dark");
-    // console.log("GETTING: ", localStorage.getItem("theme"));
   },
   getTheme: () => {
     const theme = localStorage.getItem("theme");
 
-    // console.log("SETTING: ", theme);
-    set({ isLight: theme === "light" ? true : false });
+    if (theme) {
+      set({ isLight: theme === "light" ? true : false });
+    } else {
+      set({ isLight: true });
+    }
   },
 
   setAudio: () => {
