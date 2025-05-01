@@ -63,11 +63,13 @@ const LayoutPage = () => {
     return () => clearInterval(timeChanger);
   }, []);
 
+  // #000714
+
   useEffect(() => {
-    document.body.style.background = isLight ? "#f0fdf4" : "#000000";
+    document.body.style.background = isLight ? "#f0fdf4" : "#0f0b00";
     document.body.style.backgroundImage = isLight
       ? `url("https://www.transparenttextures.com/patterns/brilliant.png")`
-      : "none";
+      : `url("https://www.transparenttextures.com/patterns/brilliant.png");`;
   }, [isLight]);
 
   const getPathName = () => {
