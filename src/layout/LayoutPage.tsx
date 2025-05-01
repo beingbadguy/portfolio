@@ -152,7 +152,7 @@ const LayoutPage = () => {
           </div>
 
           <nav
-            className={`fixed bottom-0 py-3 pb-4 flex items-center gap-8 backdrop-blur-lg w-full justify-center ${
+            className={`fixed bottom-0 py-3 pb-4 flex items-center gap-8 backdrop-blur-lg w-full justify-center  bg-transparent rounded-md bg-clip-padding backdrop-filter bg-opacity-10  ${
               isLight ? "text-black" : "text-white"
             }`}
           >
