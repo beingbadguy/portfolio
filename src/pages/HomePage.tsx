@@ -111,7 +111,7 @@ const HomePage = () => {
       </div>
       <div className="select-none">
         <h1
-          className={`  mt-7 flex items-center ${
+          className={`  mt-7 flex items-center gap-1 ${
             isLight ? "text-black" : "text-white"
           } `}
         >
