@@ -57,7 +57,7 @@ const EducationPage = () => {
                 filter: "blur(0px)",
                 transition: {
                   duration: 0.6,
-                  delay: index * 0.1, // Staggered ripple effect
+                  delay: index * 0.2, // Staggered ripple effect
                 },
               }}
               viewport={{ once: true, amount: 0.5 }}

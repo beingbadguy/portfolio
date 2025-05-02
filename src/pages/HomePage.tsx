@@ -15,9 +15,29 @@ import { FaGithub, FaNodeJs, FaPython } from "react-icons/fa6";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { useAudioStore } from "../store";
 import { useEffect } from "react";
+import { WiStars } from "react-icons/wi";
 
 const HomePage = () => {
   const { isLight } = useAudioStore();
+
+  const skillset = [
+    { skill: "NextJS", icon: <RiNextjsFill size={15} /> },
+    { skill: "JavaScript", icon: <DiJavascript1 size={15} /> },
+    { skill: "TypeScript", icon: <BiLogoTypescript size={15} /> },
+    { skill: "ReactJS", icon: <DiReact size={15} /> },
+    { skill: "Node.js", icon: <FaNodeJs size={15} /> },
+    { skill: "Express.js", icon: <SiExpress size={15} /> },
+    { skill: "TailwindCSS", icon: <SiTailwindcss size={15} /> },
+    { skill: "Framer Motion", icon: <TbBrandFramerMotion size={15} /> },
+    { skill: "Zustand", icon: null },
+    { skill: "Socket.IO", icon: <SiSocketdotio size={15} /> },
+    { skill: "Firebase", icon: <RiFirebaseFill size={15} /> },
+    { skill: "C", icon: null },
+    { skill: "TanStack Query", icon: <SiReactquery size={15} /> },
+    { skill: "C++", icon: null },
+    { skill: "Python", icon: <FaPython size={15} /> },
+    { skill: "Git/Github", icon: <FaGithub size={15} /> },
+  ];
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -91,13 +111,13 @@ const HomePage = () => {
       </div>
       <div className="select-none">
         <h1
-          className={` font-semibold mt-10 ${
+          className={`  mt-7 flex items-center ${
             isLight ? "text-black" : "text-white"
           } `}
         >
-          Skills and Technologies{" "}
+          <WiStars className="size-6" /> Skills and Technologies{" "}
         </h1>
-        <motion.div
+        {/* <motion.div
           initial={{ filter: "blur(3px)", y: -20 }}
           whileInView={{ filter: "blur(0px)", y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
@@ -126,8 +146,7 @@ const HomePage = () => {
             yes={false}
             icon={<SiExpress size={15} />}
           />
-          {/* <Skills skill={"HTML"} yes={false} icon={<FaHtml5 size={15} />} /> */}
-          {/* <Skills skill={"CSS"} yes={false} icon={<SiCss3 size={15} />} /> */}
+
           <Skills
             skill={"TailwindCSS"}
             yes={false}
@@ -162,6 +181,25 @@ const HomePage = () => {
             yes={false}
             icon={<FaGithub size={15} />}
           />
+        </motion.div> */}
+        <motion.div className="flex gap-2 my-2 flex-wrap ">
+          {skillset.map((s, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, filter: "blur(0px)" }}
+              whileInView={{
+                opacity: 1,
+                filter: "blur(0px)",
+                transition: {
+                  duration: 0.6,
+                  delay: index * 0.1, // Staggered ripple effect
+                },
+              }}
+              viewport={{ once: true, amount: 0.5 }}
+            >
+              <Skills key={index} skill={s.skill} yes={false} icon={s.icon} />
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </div>

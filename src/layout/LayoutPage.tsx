@@ -3,7 +3,7 @@ import { FaCircle, FaRegFolderClosed } from "react-icons/fa6";
 import { ImConnection } from "react-icons/im";
 import { RiHome6Line } from "react-icons/ri";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import { MdOutlineSchool } from "react-icons/md";
+import { MdOutlineSchool, MdOutlineWorkOutline } from "react-icons/md";
 import { motion } from "motion/react";
 import TextScramble from "../components/TextScramble";
 import { useAudioStore } from "../store";
@@ -135,6 +135,7 @@ const LayoutPage = () => {
                   clickSound();
                 }}
               />
+
               <p className={`${isLight ? "text-gray-800" : "text-white"}`}>
                 {date} IST
               </p>
@@ -160,6 +161,7 @@ const LayoutPage = () => {
               { icon: <RiHome6Line size={25} />, route: "/" },
               { icon: <FaRegFolderClosed size={20} />, route: "/projects" },
               { icon: <MdOutlineSchool size={25} />, route: "/education" },
+              { icon: <MdOutlineWorkOutline size={23} />, route: "/work" },
               { icon: <ImConnection size={22} />, route: "/socials" },
             ].map((item, i) => {
               const isActive = pathname === item.route;
