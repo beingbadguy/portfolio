@@ -37,7 +37,7 @@ const Work = (prop: propType) => {
         </a>
       </div>
 
-      <div className="flex items-center justify-between flex-wrap gap-1 my-3 text-[12px] md:text-[14px] text-gray-400">
+      <div className="flex md:items-center justify-between flex-col md:flex-row flex-wrap gap-1 my-3 text-[12px] md:text-[14px] text-gray-400">
         <p>{prop.post}</p>
         <div className="flex items-center gap-2">
           <p>{prop.from}</p>-<p>{prop.to}</p>
