@@ -5,6 +5,8 @@
   /* font-family: "Geist", sans-serif;  */
   font-family: "Geist Mono", monospace;
   /* font-family: "Shadows Into Light", cursive; */
+  user-select: none;
+  cursor: pointer;
 }
 *::selection {
   background-color: #22c55e;
@@ -45,12 +47,15 @@ body {
 /* Handle on hover */
 /* ::-webkit-scrollbar-thumb:hover {
   background: #555;
-} */ */
+} */
+*/
 
 /* Hide scrollbar for all browsers */
 body {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
+  cursor: pointer;
+  user-select: none;
 }
 
 body::-webkit-scrollbar {

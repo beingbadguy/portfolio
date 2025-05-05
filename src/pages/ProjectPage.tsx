@@ -123,12 +123,12 @@ const ProjectPage = () => {
       {projectDetails.map((project, idx) => (
         <motion.div
           initial={{ opacity: 0, filter: "blur(1px)" }}
-          whileInView={{
+          animate={{
             opacity: 1,
             filter: "blur(0px)",
             transition: {
-              duration: 0.1,
-              delay: idx * 0.2, // Staggered ripple effect
+              duration: 0.6,
+              delay: idx * 0.2, // instead of 0.2
             },
           }}
           viewport={{ once: true }}

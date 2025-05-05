@@ -9,6 +9,7 @@ import { IoIosMusicalNote, IoIosPlay } from "react-icons/io";
 import { useEffect } from "react";
 import { IoPauseOutline } from "react-icons/io5";
 import { useAudioStore } from "../store";
+import ContactAction from "../components/ContactAction";
 
 const SocialPage = () => {
   const {
@@ -44,8 +45,9 @@ const SocialPage = () => {
       viewport={{ once: true }}
       className={` ${
         isLight ? "text-black" : "text-white"
-      } m-4 flex items-center justify-center mb-20 flex-col gap-2  `}
+      } m-4 flex items-center justify-center mb-20 flex-col gap-2 md:gap-0  `}
     >
+      <ContactAction />
       {/* <a
         href="https://drive.google.com/file/d/1x8k36tFh00I_x7dbITxM31Vl3JD9PtGd/view?usp=sharing"
         target="_blank"

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Work from "../components/Work";
+import { useEffect } from "react";
 
 const workExperience = [
   {
@@ -60,13 +61,16 @@ const workExperience = [
 ];
 
 const WorkPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <motion.div className="m-8 mb-20 flex flex-col gap-5">
       {workExperience.map((job, index) => (
         <motion.div
           key={index}
           initial={{ opacity: 0, filter: "blur(1px)" }}
-          whileInView={{
+          animate={{
             opacity: 1,
             filter: "blur(0px)",
             transition: {
