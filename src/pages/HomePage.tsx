@@ -115,7 +115,7 @@ const HomePage = () => {
             isLight ? "text-black" : "text-white"
           } `}
         >
-          <WiStars className="size-6" /> Skills and Technologies{" "}
+          <WiStars className="size-6 animate-pulse" /> Skills and Technologies{" "}
         </h1>
         {/* <motion.div
           initial={{ filter: "blur(3px)", y: -20 }}

@@ -34,7 +34,7 @@ const EducationPage = () => {
   }, []);
 
   return (
-    <motion.div className="m-4 flex flex-col items-center justify- w-full">
+    <motion.div className="m-4 flex flex-col ">
       {educationData.map((edu, idx) => (
         <motion.div
           key={idx}
