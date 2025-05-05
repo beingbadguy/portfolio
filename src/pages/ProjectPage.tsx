@@ -127,7 +127,7 @@ const ProjectPage = () => {
             opacity: 1,
             filter: "blur(0px)",
             transition: {
-              duration: 0.6,
+              duration: 0.1,
               delay: idx * 0.2, // Staggered ripple effect
             },
           }}

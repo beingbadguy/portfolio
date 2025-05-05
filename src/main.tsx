@@ -11,6 +11,7 @@ import SocialPage from "./pages/SocialPage.tsx";
 import ErrorPage from "./pages/ErrorPage.tsx";
 import EducationPage from "./pages/EducationPage.tsx";
 import { Analytics } from "@vercel/analytics/react";
+import ClickBurst from "./components/ClickBurst.tsx";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <RouterProvider router={router} />
+    <ClickBurst />
     <Analytics />
   </StrictMode>
 );
