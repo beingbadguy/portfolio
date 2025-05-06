@@ -15,8 +15,8 @@ const ClickBurst = () => {
       }
       const burstContainer = document.createElement("div");
       burstContainer.style.position = "absolute";
-      burstContainer.style.left = `${e.clientX}px`;
-      burstContainer.style.top = `${e.clientY}px`;
+      burstContainer.style.left = `${e.pageX}px`;
+      burstContainer.style.top = `${e.pageY}px`;
       burstContainer.style.pointerEvents = "none";
 
       for (let i = 0; i < 6; i++) {
