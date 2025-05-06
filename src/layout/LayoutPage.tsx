@@ -4,7 +4,7 @@ import { ImConnection } from "react-icons/im";
 import { RiHome6Line } from "react-icons/ri";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { MdOutlineSchool, MdOutlineWorkOutline } from "react-icons/md";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import TextScramble from "../components/TextScramble";
 import { useAudioStore } from "../store";
 
@@ -15,10 +15,17 @@ const LayoutPage = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState<boolean>(true);
   const [currentLanguage, setCurrentLanguage] = useState<number>(0);
+  const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
   const clickSound = () => {
-    const audio = new Audio("btn.mp3");
-    audio.volume = 0.1;
+    const audio = new Audio("bubble-pop.mp3");
+    audio.volume = 0.3;
+    audio.play();
+  };
+  const themeChange = () => {
+    // const audio = new Audio("swoosh-5.mp3");
+    const audio = new Audio("whistle.mp3");
+    // audio.volume = 0.1;
     audio.play();
   };
 
@@ -37,9 +44,7 @@ const LayoutPage = () => {
     "नमस्ते",
   ];
 
-  useEffect(() => {
-    getTheme();
-  }, []);
+  useEffect(() => getTheme(), []);
 
   useEffect(() => {
     setLoading(true);
@@ -63,13 +68,9 @@ const LayoutPage = () => {
     return () => clearInterval(timeChanger);
   }, []);
 
-  // #000714
-
   useEffect(() => {
     document.body.style.background = isLight ? "#f0fdf4" : "#0f0b00";
-    document.body.style.backgroundImage = isLight
-      ? `url("https://www.transparenttextures.com/patterns/brilliant.png")`
-      : `url("https://www.transparenttextures.com/patterns/brilliant.png");`;
+    document.body.style.backgroundImage = `url("https://www.transparenttextures.com/patterns/brilliant.png")`;
   }, [isLight]);
 
   const getPathName = () => {
@@ -79,9 +80,25 @@ const LayoutPage = () => {
 
   return (
     <div>
+      {/* 👇 Carpet Reveal Animation Circle */}
+      {isAnimating && (
+        <motion.div
+          initial={{ scale: 0, x: "100%", y: "100%" }}
+          animate={{ scale: 40 }}
+          transition={{ duration: 0.8, ease: "linear" }}
+          className={`fixed bottom-0 right-0 w-20 h-20 ${
+            isLight ? "bg-black" : "bg-green-50"
+          } rounded-full z-[999] pointer-events-none`}
+          onAnimationComplete={() => {
+            setTheme();
+            setIsAnimating(false);
+          }}
+        />
+      )}
+
       {loading ? (
         <div
-          className={` ${
+          className={`${
             isLight ? "text-black " : "text-white"
           } flex items-center justify-center h-screen font-bold flex-col`}
         >
@@ -102,9 +119,8 @@ const LayoutPage = () => {
           </motion.div>
         </div>
       ) : (
-        <div
-          className={`flex items-center justify-center flex-col text-lg sm:mx-20 md:mx-32 lg:mx-60 xl:mx-92`}
-        >
+        <div className="flex items-center justify-center flex-col text-lg sm:mx-20 md:mx-32 lg:mx-60 xl:mx-92">
+          {/* Top Nav */}
           <nav className="flex items-center justify-between p-4 w-full mt-2 text-sm md:text-lg">
             <div className="flex items-center gap-1 flex-wrap">
               <TextScramble text="Aman Kumar" />
@@ -116,7 +132,7 @@ const LayoutPage = () => {
                     /
                   </span>
                   <div
-                    className={` ${
+                    className={`${
                       isLight ? "text-black" : "text-white"
                     } hover:text-green-600 cursor-pointer transition-all duration-200`}
                   >
@@ -131,8 +147,8 @@ const LayoutPage = () => {
                   isLight ? "text-green-400" : "text-white"
                 } animate-pulse cursor-pointer`}
                 onClick={() => {
-                  setTheme();
-                  clickSound();
+                  themeChange();
+                  setIsAnimating(true);
                 }}
               />
 
@@ -148,12 +164,14 @@ const LayoutPage = () => {
             }`}
           />
 
+          {/* Main Outlet */}
           <div className="w-full">
             <Outlet />
           </div>
 
+          {/* Bottom Nav */}
           <nav
-            className={`fixed bottom-0 py-3 pb-4 flex items-center gap-8 backdrop-blur-lg w-full justify-center  bg-transparent rounded-md bg-clip-padding backdrop-filter bg-opacity-10  ${
+            className={`fixed bottom-0 py-3 pb-4 flex items-center gap-8 backdrop-blur-lg w-full justify-center bg-transparent rounded-md bg-clip-padding backdrop-filter bg-opacity-10 ${
               isLight ? "text-black" : "text-white"
             }`}
           >
