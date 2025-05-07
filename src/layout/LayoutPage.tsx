@@ -100,7 +100,7 @@ const LayoutPage = () => {
         <div
           className={`${
             isLight ? "text-black " : "text-white"
-          } flex items-center justify-center h-screen font-bold flex-col`}
+          } flex items-center justify-center h-screen font-bold flex-col max-h-[90vh] overflow-hidden min-h-[90vh]`}
         >
           <motion.div
             animate={
