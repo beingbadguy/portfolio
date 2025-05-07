@@ -25,7 +25,7 @@ const LayoutPage = () => {
   const themeChange = () => {
     // const audio = new Audio("swoosh-5.mp3");
     const audio = new Audio("whistle.mp3");
-    // audio.volume = 0.1;
+    // audio.volume = 0.4;
     audio.play();
   };
 
