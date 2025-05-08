@@ -23,7 +23,7 @@ const SocialPage = () => {
   } = useAudioStore();
   useEffect(() => {
     setAudio();
-  }, []);
+  }, [setAudio]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -45,7 +45,7 @@ const SocialPage = () => {
       viewport={{ once: true }}
       className={` ${
         isLight ? "text-black" : "text-white"
-      } m-4 flex items-center justify-center mb-20 flex-col gap-2 md:gap-0  `}
+      } m-4 flex items-center justify-center mb-20 flex-col gap-2 md:gap-0 `}
     >
       <ContactAction />
       {/* <a
