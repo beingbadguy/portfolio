@@ -7,9 +7,9 @@ import { MdOutlineSchool, MdOutlineWorkOutline } from "react-icons/md";
 import { motion } from "framer-motion";
 import TextScramble from "../components/TextScramble";
 import { useAudioStore } from "../store";
+import TimeClock from "../components/TimeClock";
 
 const LayoutPage = () => {
-  const [date, setDate] = useState<string>("");
   const { isLight, setTheme, getTheme } = useAudioStore();
   const { pathname } = useLocation();
   const navigate = useNavigate();
@@ -71,18 +71,17 @@ const LayoutPage = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentLanguage((prev) =>
-        prev < greetings.length - 1 ? prev + 1 : greetings.length - 1
-      );
+      setCurrentLanguage((prev) => {
+        if (prev < greetings.length - 1) {
+          return prev + 1;
+        } else {
+          clearInterval(interval); // STOP once done
+          return prev;
+        }
+      });
     }, 320);
-    return () => clearInterval(interval);
-  }, []);
 
-  useEffect(() => {
-    const timeChanger = setInterval(() => {
-      setDate(new Date().toLocaleTimeString());
-    }, 1000);
-    return () => clearInterval(timeChanger);
+    return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
@@ -123,7 +122,7 @@ const LayoutPage = () => {
 
   return (
     <div>
-      {/* 👇 Carpet Reveal Animation Circle */}
+      {/* Carpet Reveal Animation Circle */}
       {isAnimating && (
         <motion.div
           initial={{ scale: 0, x: "100%", y: "100%" }}
@@ -195,9 +194,13 @@ const LayoutPage = () => {
                 }}
               />
 
-              <p className={`${isLight ? "text-gray-800" : "text-white"}`}>
-                {date} IST
-              </p>
+              <div
+                className={`${
+                  isLight ? "text-gray-800" : "text-white"
+                } flex items-center gap-2`}
+              >
+                <TimeClock /> IST
+              </div>
             </div>
           </nav>
 
@@ -262,8 +265,8 @@ const LayoutPage = () => {
                 animate={getAnimationProps()}
                 transition={{
                   type: "spring",
-                  stiffness: 250,
-                  damping: 22,
+                  stiffness: 450,
+                  damping: 24,
                 }}
                 className={` size-1 top-7 left-[11px] absolute bg-green-500 rounded-full  z-[9999]`}
               />
