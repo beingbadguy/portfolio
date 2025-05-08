@@ -263,7 +263,7 @@ const LayoutPage = () => {
                 transition={{
                   type: "spring",
                   stiffness: 250,
-                  damping: 15,
+                  damping: 22,
                 }}
                 className={` size-1 top-7 left-[11px] absolute bg-green-500 rounded-full  z-[9999]`}
               />
