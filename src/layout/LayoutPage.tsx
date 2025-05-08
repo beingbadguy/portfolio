@@ -16,6 +16,23 @@ const LayoutPage = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [currentLanguage, setCurrentLanguage] = useState<number>(0);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
+  const [dotIndex, setDotIndex] = useState<number>(0);
+
+  useEffect(() => {
+    if (pathname === "/") {
+      setDotIndex(0);
+    } else if (pathname === "/projects") {
+      setDotIndex(1);
+    } else if (pathname === "/education") {
+      setDotIndex(2);
+    } else if (pathname === "/work") {
+      setDotIndex(3);
+    } else if (pathname === "/socials") {
+      setDotIndex(4);
+    } else {
+      setDotIndex(0);
+    }
+  }, [pathname]);
 
   const clickSound = () => {
     const audio = new Audio("bubble-pop.mp3");
@@ -76,6 +93,32 @@ const LayoutPage = () => {
   const getPathName = () => {
     const name = pathname.replace("/", "");
     return name ? name.charAt(0).toUpperCase() + name.slice(1) : "";
+  };
+
+  const navigationItems = [
+    { icon: <RiHome6Line size={25} />, route: "/" },
+    { icon: <FaRegFolderClosed size={20} />, route: "/projects" },
+    { icon: <MdOutlineSchool size={25} />, route: "/education" },
+    { icon: <MdOutlineWorkOutline size={23} />, route: "/work" },
+    { icon: <ImConnection size={22} />, route: "/socials" },
+  ];
+
+  const getAnimationProps = () => {
+    switch (dotIndex) {
+      case 0:
+        return { x: 53 * dotIndex };
+      case 1:
+        return { x: 53 * dotIndex + 1 };
+      case 2:
+        return { x: 53 * dotIndex + 2 };
+      case 3:
+        return { x: 53 * dotIndex + 5 };
+      case 4:
+        return { x: 53 * dotIndex + 7 };
+      // Add more cases as needed for each greeting
+      default:
+        return { x: 53 * dotIndex }; // Default animation
+    }
   };
 
   return (
@@ -175,35 +218,56 @@ const LayoutPage = () => {
               isLight ? "text-black" : "text-white"
             }`}
           >
-            {[
-              { icon: <RiHome6Line size={25} />, route: "/" },
-              { icon: <FaRegFolderClosed size={20} />, route: "/projects" },
-              { icon: <MdOutlineSchool size={25} />, route: "/education" },
-              { icon: <MdOutlineWorkOutline size={23} />, route: "/work" },
-              { icon: <ImConnection size={22} />, route: "/socials" },
-            ].map((item, i) => {
-              const isActive = pathname === item.route;
-              return (
-                <div className="relative" key={i}>
-                  <div
-                    className={`hover:-translate-y-1 transition-all ease-in-out cursor-pointer duration-300 ${
-                      isActive && isLight ? "text-green-500 md:text-black" : ""
-                    }`}
-                    onClick={() => {
-                      if (!isActive) clickSound();
-                      navigate(item.route);
-                    }}
-                  >
-                    {item.icon}
+            <div className="relative flex items-center gap-8">
+              {navigationItems.map((item, i) => {
+                const isActive = pathname === item.route;
+                return (
+                  <div className="relative  " key={i}>
+                    <div
+                      className={`hover:-translate-y-1 transition-all ease-in-out cursor-pointer duration-300 ${
+                        isActive && isLight
+                          ? "text-green-500 md:text-black"
+                          : ""
+                      }`}
+                      onClick={() => {
+                        if (!isActive) clickSound();
+                        navigate(item.route);
+                        if (item.route === "/") {
+                          setDotIndex(0);
+                        } else if (item.route === "/projects") {
+                          setDotIndex(1);
+                        } else if (item.route === "/education") {
+                          setDotIndex(2);
+                        } else if (item.route === "/work") {
+                          setDotIndex(3);
+                        } else if (item.route === "/socials") {
+                          setDotIndex(4);
+                        } else {
+                          setDotIndex(0);
+                        }
+                      }}
+                    >
+                      {item.icon}
+                    </div>
+                    {/* <div
+                      className={`${
+                        isActive ? "block" : "hidden"
+                      } size-1 absolute bg-green-500 rounded-full -bottom-2 left-[40%]`}
+                    /> */}
                   </div>
-                  <div
-                    className={`${
-                      isActive ? "block" : "hidden"
-                    } size-1 absolute bg-green-500 rounded-full -bottom-2 left-[40%]`}
-                  />
-                </div>
-              );
-            })}
+                );
+              })}
+              <motion.div
+                initial={false}
+                animate={getAnimationProps()}
+                transition={{
+                  type: "spring",
+                  stiffness: 250,
+                  damping: 15,
+                }}
+                className={` size-1 top-7 left-[11px] absolute bg-green-500 rounded-full  z-[9999]`}
+              />
+            </div>
           </nav>
         </div>
       )}
