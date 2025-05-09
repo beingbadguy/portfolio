@@ -7,6 +7,15 @@
   /* font-family: "Shadows Into Light", cursive; */
   user-select: none;
   cursor: pointer;
+
+  /* font-family: "Satoshi", sans-serif; */
+  /* font-family: "Supreme", sans-serif; */
+  /* font-family: "Boska", serif; */
+  /* font-family: "Synonym", sans-serif; */
+  /* font-family: "Telma", cursive; */
+  /* font-family: "Gambetta", serif; */
+  /* font-family: "RX100", sans-serif; */
+  /* font-family: "Clash Grotesk", sans-serif; */
 }
 *::selection {
   background-color: #22c55e;

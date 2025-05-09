@@ -44,15 +44,25 @@ const HomePage = () => {
   }, []);
   return (
     <div className="m-4 mb-20 text-sm md:text-[16px] ">
-      <div className="">
+      <div className="relative ">
+        {/* <div className="size-2 -left-2 bg-green-500  absolute border" /> */}
         <motion.img
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           viewport={{ once: true }}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+          dragElastic={0.5}
+          dragTransition={{
+            bounceStiffness: 300,
+            bounceDamping: 15,
+          }}
+          dragMomentum={true}
+          whileDrag={{ scale: 1.2 }}
           src="/passport.jpg"
           alt=""
-          className="h-20 my-2 rounded"
+          className="h-20 my-2 rounded z-[99999]"
         />
         {/* <div></div> */}
       </div>
