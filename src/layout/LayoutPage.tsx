@@ -8,8 +8,11 @@ import { motion } from "framer-motion";
 import TextScramble from "../components/TextScramble";
 import { useAudioStore } from "../store";
 import TimeClock from "../components/TimeClock";
+import { useLenisScroll } from "../components/useLenisScroll";
 
 const LayoutPage = () => {
+  useLenisScroll();
+
   const { isLight, setTheme, getTheme } = useAudioStore();
   const { pathname } = useLocation();
   const navigate = useNavigate();
