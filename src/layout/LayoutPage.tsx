@@ -222,7 +222,7 @@ const LayoutPage = () => {
 
           {/* Bottom Nav */}
           <nav
-            className={`fixed bottom-0 py-3 pb-4 flex items-center gap-8 backdrop-blur-lg w-full justify-center bg-transparent rounded-md bg-clip-padding backdrop-filter bg-opacity-10 ${
+            className={`fixed bottom-0 py-3 pb-5 sm:pb-4 flex items-center gap-8 backdrop-blur-lg w-full justify-center bg-transparent rounded-md bg-clip-padding backdrop-filter bg-opacity-10 ${
               isLight ? "text-black" : "text-white"
             }`}
           >
@@ -230,12 +230,10 @@ const LayoutPage = () => {
               {navigationItems.map((item, i) => {
                 const isActive = pathname === item.route;
                 return (
-                  <div className="relative  " key={i}>
+                  <div className="relative" key={i}>
                     <div
-                      className={`hover:-translate-y-1 transition-all ease-in-out cursor-pointer duration-300  ${
-                        isActive && isLight
-                          ? "text-green-500 md:text-black"
-                          : ""
+                      className={`hover:-translate-y-1  transition-all ease-in-out cursor-pointer duration-300  ${
+                        isActive && isLight ? "text-green-500 " : ""
                       }`}
                       onClick={() => {
                         if (!isActive) clickSound();
