@@ -9,6 +9,7 @@ import TextScramble from "../components/TextScramble";
 import { useAudioStore } from "../store";
 import TimeClock from "../components/TimeClock";
 import { useLenisScroll } from "../components/useLenisScroll";
+import GreetingsMotion from "../components/GreetingsMotion";
 
 const LayoutPage = () => {
   useLenisScroll();
@@ -17,7 +18,7 @@ const LayoutPage = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const [loading, setLoading] = useState<boolean>(true);
-  const [currentLanguage, setCurrentLanguage] = useState<number>(0);
+  // const [currentLanguage, setCurrentLanguage] = useState<number>(0);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
   const [dotIndex, setDotIndex] = useState<number>(0);
 
@@ -53,8 +54,8 @@ const LayoutPage = () => {
     "Hello",
     "Hola",
     "Bonjour",
-    "Hallo",
     "你好",
+    "Hallo",
     "こんにちは",
     "Ciao",
     "Здравствуйте",
@@ -68,24 +69,24 @@ const LayoutPage = () => {
 
   useEffect(() => {
     setLoading(true);
-    const interval = setTimeout(() => setLoading(false), 4000);
+    const interval = setTimeout(() => setLoading(false), 5200);
     return () => clearTimeout(interval);
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentLanguage((prev) => {
-        if (prev < greetings.length - 1) {
-          return prev + 1;
-        } else {
-          clearInterval(interval); // STOP once done
-          return prev;
-        }
-      });
-    }, 320);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentLanguage((prev) => {
+  //       if (prev < greetings.length - 1) {
+  //         return prev + 1;
+  //       } else {
+  //         clearInterval(interval); // STOP once done
+  //         return prev;
+  //       }
+  //     });
+  //   }, 150);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   useEffect(() => {
     document.body.style.background = isLight ? "#f0fdf4" : "#0f0b00";
@@ -142,27 +143,28 @@ const LayoutPage = () => {
       )}
 
       {loading ? (
-        <div
-          className={`${
-            isLight ? "text-black " : "text-white"
-          } flex items-center justify-center h-screen font-bold flex-col max-h-[90vh] overflow-hidden min-h-[90vh]`}
-        >
-          <motion.div
-            animate={
-              currentLanguage === greetings.length - 1
-                ? { scale: [1, 10], opacity: [1, 0] }
-                : {}
-            }
-            transition={{
-              duration: 0.5,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-            className="texty text-xl"
-          >
-            {greetings[currentLanguage]}
-          </motion.div>
-        </div>
+        // <div
+        //   className={`${
+        //     isLight ? "text-black " : "text-white"
+        //   } flex items-center justify-center h-screen font-bold flex-col max-h-[90vh] overflow-hidden min-h-[90vh]`}
+        // >
+        //   <motion.div
+        //     animate={
+        //       currentLanguage === greetings.length - 1
+        //         ? { scale: [1, 10], opacity: [1, 0] }
+        //         : {}
+        //     }
+        //     transition={{
+        //       duration: 0.5,
+        //       repeat: Infinity,
+        //       repeatType: "reverse",
+        //     }}
+        //     className="texty text-xl"
+        //   >
+        //     {greetings[currentLanguage]}
+        //   </motion.div>
+        // </div>
+        <GreetingsMotion greetings={greetings} isLight={isLight} />
       ) : (
         <div className="flex items-center justify-center flex-col text-lg sm:mx-20 md:mx-32 lg:mx-60 xl:mx-92">
           {/* Top Nav */}

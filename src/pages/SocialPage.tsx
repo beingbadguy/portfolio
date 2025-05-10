@@ -113,9 +113,7 @@ const SocialPage = () => {
         <div className="flex justify-between items-center w-full">
           <div className="flex gap-4">
             <div
-              className={`bg-green-500 size-14 flex items-center justify-center rounded ${
-                isPlaying ? " shadow-[0px_0_10px_2px_rgba(34,197,94,0.8)] " : ""
-              } transition-all duration-300 `}
+              className={`bg-green-500 size-14 flex items-center justify-center rounded  transition-all duration-300 `}
             >
               <AiOutlineSpotify className="size-10" />
             </div>
