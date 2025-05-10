@@ -14,7 +14,7 @@ const Education = (prop: educationPropType) => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 1 }}
-      className={`flex items-start justify-between mt-4 text-[12px] md:text-md w-full cursor-pointer p-2  ${
+      className={`flex items-start justify-between mt-4 text-[10px] sm:text-[12px] md:text-md w-full cursor-pointer p-2  ${
         isLight
           ? " hover:text-black hover:bg-green-200 "
           : "hover:text-black hover:bg-white "

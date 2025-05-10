@@ -76,6 +76,9 @@ const EducationPage = () => {
                 },
               }}
               viewport={{ once: true, amount: 0.5 }}
+              className={`${
+                isLight ? "text-black" : "text-white"
+              } text-[10px] sm:text-[12px] md:text-[14px]`}
             >
               {word}
             </motion.h1>

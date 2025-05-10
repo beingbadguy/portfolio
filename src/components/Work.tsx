@@ -31,19 +31,19 @@ const Work = (prop: propType) => {
           target="_blank"
           className={` ${
             isLight ? "text-black" : "text-white"
-          } font-semibold border-b text-sm cursor-pointer`}
+          } font-semibold border-b  cursor-pointer text-[12px] sm:text-sm md:text-[14px]`}
         >
           {prop.name}
         </a>
       </div>
 
-      <div className="flex md:items-center justify-between flex-col md:flex-row flex-wrap gap-1 my-3 text-[12px] md:text-[14px] text-gray-400">
-        <p>{prop.post}</p>
+      <div className="flex md:items-center justify-between flex-col md:flex-row flex-wrap gap-1 my-3 text-[10px] sm:text-[12px] md:text-[14px] text-gray-400">
+        <p className="text-[10px] sm:text-[12px] md:text-[14px]">{prop.post}</p>
         <div className="flex items-center gap-2">
           <p>{prop.from}</p>-<p>{prop.to}</p>
         </div>
       </div>
-      <h1 className="text-[12px] md:text-[14px] my-2 text-gray-500 selection:bg-yellow-500 selection:text-white">
+      <h1 className="text-[10px] sm:text-[12px] md:text-[14px] my-2 text-gray-500 selection:bg-yellow-500 selection:text-white">
         {prop.description}
       </h1>
       <div className="flex gap-2 flex-wrap">

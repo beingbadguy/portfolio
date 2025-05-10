@@ -12,7 +12,7 @@ const Skills = ({
   const { isLight } = useAudioStore();
   return (
     <motion.div
-      className={`text-[12px] md:text-[13px] w-auto p-1 border-gray-300 select-none border  ${
+      className={`text-[10px] md:text-[13px] w-auto p-1 border-gray-300 select-none border  ${
         isLight ? "text-black" : "text-white"
       } ${
         yes ? " " : " border-gray-300 inset-0 flex items-center gap-1"

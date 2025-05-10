@@ -43,7 +43,7 @@ const HomePage = () => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div className="m-4 mb-20 text-sm md:text-[16px] ">
+    <div className="m-4 mb-20 text-[12px] sm:text-sm md:text-[16px] ">
       <div className="relative ">
         {/* <div className="size-2 -left-2 bg-green-500  absolute border" /> */}
         <motion.img
@@ -73,7 +73,7 @@ const HomePage = () => {
         viewport={{ once: true }}
         className={`selection:bg-yellow-500  ${
           isLight ? "text-black" : "text-white"
-        } selection:text-white text-sm md:text-[16px]`}
+        } selection:text-white  text-[12px] sm:text-sm md:text-[16px]`}
       >
         Hey, I'm Aman, a{" "}
         <span

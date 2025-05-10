@@ -10,7 +10,7 @@ const TimeClock = () => {
     return () => clearInterval(timeChanger);
   }, []);
 
-  return <div>{date}</div>;
+  return <div>{date} IST</div>;
 };
 
 export default TimeClock;

@@ -64,7 +64,7 @@ const ContactAction = () => {
 
   return (
     <div className="flex items-center justify-center flex-col">
-      <div className="text-3xl md:text-2xl text-center">
+      <div className=" text-2xl sm:text-3xl md:text-2xl text-center">
         Let&apos;s Work Together
       </div>
 

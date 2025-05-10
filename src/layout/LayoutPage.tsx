@@ -168,7 +168,7 @@ const LayoutPage = () => {
       ) : (
         <div className="flex items-center justify-center flex-col text-lg sm:mx-20 md:mx-32 lg:mx-60 xl:mx-92">
           {/* Top Nav */}
-          <nav className="flex items-center justify-between p-4 w-full mt-2 text-sm md:text-lg">
+          <nav className="flex items-center justify-between p-4 w-full mt-2 text-[12px] sm:text-sm md:text-lg">
             <div className="flex items-center gap-1 flex-wrap">
               <TextScramble text="Aman Kumar" />
               {pathname !== "/" && (
@@ -204,7 +204,7 @@ const LayoutPage = () => {
                   isLight ? "text-gray-800" : "text-white"
                 } flex items-center gap-2`}
               >
-                <TimeClock /> IST
+                <TimeClock />
               </div>
             </div>
           </nav>
@@ -232,7 +232,7 @@ const LayoutPage = () => {
                 return (
                   <div className="relative  " key={i}>
                     <div
-                      className={`hover:-translate-y-1 transition-all ease-in-out cursor-pointer duration-300 ${
+                      className={`hover:-translate-y-1 transition-all ease-in-out cursor-pointer duration-300  ${
                         isActive && isLight
                           ? "text-green-500 md:text-black"
                           : ""
