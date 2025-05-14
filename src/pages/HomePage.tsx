@@ -3,6 +3,7 @@ import { RiFirebaseFill, RiMailLine, RiNextjsFill } from "react-icons/ri";
 import {
   SiExpress,
   SiMaildotru,
+  SiPrisma,
   SiReactquery,
   SiSocketdotio,
   SiTailwindcss,
@@ -37,6 +38,7 @@ const HomePage = () => {
     { skill: "C++", icon: null },
     { skill: "Python", icon: <FaPython size={15} /> },
     { skill: "Git/Github", icon: <FaGithub size={15} /> },
+    { skill: "Prisma ORM", icon: <SiPrisma size={15} /> },
   ];
 
   useEffect(() => {
