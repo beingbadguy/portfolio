@@ -105,8 +105,8 @@ export const useAudioStore = create<AudioState>((set, get) => ({
     try {
       const { data, error } = await supabase.from("visitors").select("*");
       if (error) console.error("Fetch Error:", error);
-      console.log(data);
-      // return data;
+      // console.log(data);
+
       if (data) {
         set({ visitor: data.length });
       }
