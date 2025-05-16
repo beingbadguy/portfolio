@@ -14,7 +14,7 @@ import GreetingsMotion from "../components/GreetingsMotion";
 const LayoutPage = () => {
   useLenisScroll();
 
-  const { isLight, setTheme, getTheme } = useAudioStore();
+  const { isLight, setTheme, getTheme, addVisitorToDB } = useAudioStore();
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const [loading, setLoading] = useState<boolean>(true);
@@ -123,6 +123,10 @@ const LayoutPage = () => {
         return { x: 53 * dotIndex }; // Default animation
     }
   };
+
+  useEffect(() => {
+    addVisitorToDB();
+  }, []);
 
   return (
     <div>

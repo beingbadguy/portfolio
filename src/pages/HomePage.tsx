@@ -19,7 +19,7 @@ import { useEffect } from "react";
 import { WiStars } from "react-icons/wi";
 
 const HomePage = () => {
-  const { isLight, addVisitorToDB } = useAudioStore();
+  const { isLight } = useAudioStore();
 
   const skillset = [
     { skill: "NextJS", icon: <RiNextjsFill size={15} /> },
@@ -43,7 +43,6 @@ const HomePage = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    addVisitorToDB();
   }, []);
   return (
     <div className="m-4 mb-20 text-[12px] sm:text-sm md:text-[16px] ">
