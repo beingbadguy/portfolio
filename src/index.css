@@ -70,3 +70,35 @@ body {
 body::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+
+/* path tracer button  */
+.trace-button::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 9999px; /* full rounded */
+  border: 2px solid rgba(52, 211, 153, 0.8);
+  animation: trace-border 2s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.trace-button > * {
+  position: relative;
+  z-index: 10;
+}
+
+@keyframes trace-border {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  50% {
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 100%);
+  }
+}

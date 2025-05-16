@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import { IoPauseOutline } from "react-icons/io5";
 import { useAudioStore } from "../store";
 import ContactAction from "../components/ContactAction";
+import VisitorButton from "../components/CountingVisitors";
 
 const SocialPage = () => {
   const {
@@ -20,13 +21,17 @@ const SocialPage = () => {
     duration,
     currentTime,
     isLight,
+    fetchVisitors,
+    visitor,
   } = useAudioStore();
   useEffect(() => {
     setAudio();
   }, [setAudio]);
+  // console.log(visitor);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    fetchVisitors();
   }, []);
 
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
@@ -107,9 +112,13 @@ const SocialPage = () => {
 
       {/* fun starts from here  */}
       <div className="flex items-start text-left justify-start  w-full flex-col">
-        <h1 className="text-left font-semibold text-md my-2 texty flex items-center gap-1">
-          Now Playing <IoIosMusicalNote className={isPlaying ? "" : ""} />
-        </h1>
+        <div className="flex items-center justify-between w-full">
+          <div>
+            <h1 className="text-left font-semibold text-md my-2 texty flex items-center gap-1">
+              Now Playing <IoIosMusicalNote className={isPlaying ? "" : ""} />
+            </h1>
+          </div>
+        </div>
         <div className="flex justify-between items-center w-full">
           <div className="flex gap-4">
             <div
@@ -149,9 +158,10 @@ const SocialPage = () => {
             style={{ width: `${progress}%` }}
           ></div>
         </div>
-
         {/* Time Display */}
         {/* <p className="text-sm text-gray-400 mt-2">{Math.floor(progress)}%</p> */}
+
+        <VisitorButton visitor={visitor} />
       </div>
     </motion.div>
   );

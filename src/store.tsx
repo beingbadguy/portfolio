@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { supabase } from "./supabse/supabseClient";
 
 interface AudioState {
   isLight: boolean;
@@ -6,12 +7,15 @@ interface AudioState {
   audio: HTMLAudioElement | null;
   duration: number;
   currentTime: number;
+  visitor: number;
   setTheme: () => void;
   getTheme: () => void;
   setAudio: () => void;
   playAudio: () => void;
   pauseAudio: () => void;
   updateTime: () => void;
+  addVisitorToDB: () => void;
+  fetchVisitors: () => void;
 }
 
 export const useAudioStore = create<AudioState>((set, get) => ({
@@ -20,6 +24,7 @@ export const useAudioStore = create<AudioState>((set, get) => ({
   audio: null,
   duration: 0,
   currentTime: 0,
+  visitor: 0,
   setTheme: () => {
     set({ isLight: !get().isLight });
     localStorage.setItem("theme", get().isLight ? "light" : "dark");
@@ -71,6 +76,42 @@ export const useAudioStore = create<AudioState>((set, get) => ({
     const { audio } = get();
     if (audio) {
       set({ currentTime: audio.currentTime });
+    }
+  },
+
+  addVisitorToDB: async () => {
+    try {
+      const res = await fetch("https://api64.ipify.org?format=json");
+      const data = await res.json();
+      const ip = data.ip;
+
+      // Store in Supabase
+      const { data: existing } = await supabase
+        .from("visitors")
+        .select("*")
+        .eq("visitor", ip);
+
+      if (existing && existing.length === 0) {
+        const { error } = await supabase
+          .from("visitors")
+          .insert([{ visitor: ip }]);
+        if (error) console.error("Insert Error:", error);
+      }
+    } catch (err) {
+      console.error("IP fetch error:", err);
+    }
+  },
+  fetchVisitors: async () => {
+    try {
+      const { data, error } = await supabase.from("visitors").select("*");
+      if (error) console.error("Fetch Error:", error);
+      console.log(data);
+      // return data;
+      if (data) {
+        set({ visitor: data.length });
+      }
+    } catch (err) {
+      console.error("Fetch Error:", err);
     }
   },
 }));
